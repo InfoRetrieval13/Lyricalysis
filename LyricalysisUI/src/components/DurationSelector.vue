@@ -9,17 +9,8 @@
             </div>
         </div>
 
-        <div class="drop w-[10vw] flex items-start justify-between gap-2">
-            <select v-model="selectedGenre">
-                <option
-                    v-for="genre in genres"
-                    :key="genre"
-                    :value="genre">
-                    {{ genre }}
-                </option>
-            </select>
-
-            <select v-model="genreOperator">
+        <div class="drop w-[15vw] flex items-start justify-between gap-2">
+            <select v-model="durationOperator">
                 <option
                     v-for="operator in operators"
                     :key="operator"
@@ -27,42 +18,68 @@
                     {{ operator }}
                 </option>
             </select>
+
+            <input
+                v-model="duration"
+                type="number"
+                min="1"
+                class="w-20 h-10 bg-green-500 text-white" />
+
+            <select v-model="durationUnit">
+                <option
+                    v-for="unit in units"
+                    :key="unit"
+                    :value="unit">
+                    {{ unit }}
+                </option>
+            </select>
+
+            <select v-model="durationBoolOperator">
+                <option
+                    v-for="operator in boolOperators"
+                    :key="operator"
+                    :value="operator">
+                    {{ operator }}
+                </option>
+            </select>
         </div>
+
         <div class="flex w-[10vw] items-start justify-between gap-2">
             <button @click="updateElement">Add</button>
+
             <button @click="removeElement">Clear Latest</button>
         </div>
     </div>
 </template>
-
 <script>
     export default {
-        name: "GenreSelector",
-        props: {
-            data: Array,
-        },
+        name: "DurationSelector",
+        props: { data: Array },
         data() {
             return {
-                genres: ["Pop", "Rock", "Country", "Hip-Hop", "Rap", "Jazz", "Classical", "Electronic"],
-                operators: ["AND", "OR"],
-                selectedGenre: "",
-                genreOperator: "",
+                operators: ["Shorter than", "Longer than"],
+                units: ["seconds", "minutes"],
+                boolOperators: ["AND", "OR"],
+                duration: null,
+                durationUnit: "",
+                durationOperator: "",
+                durationBoolOperator: "",
             };
         },
         methods: {
             updateElement() {
-                if (!this.selectedGenre || !this.genreOperator) {
+                if (!this.duration || !this.durationUnit || !this.durationOperator || !this.durationBoolOperator) {
                     return;
                 }
-                this.data.push(this.selectedGenre);
-                this.data.push(this.genreOperator);
+                this.data.push(`${this.durationOperator} ${this.duration} ${this.durationUnit}`);
+                this.data.push(this.durationBoolOperator);
             },
             removeElement() {
                 this.data.pop();
                 this.data.pop();
             },
             applyClass(index) {
-                let styles = ["border-2", "bg-white"];
+                let styles = ["border-2"];
                 if (index % 2 == 0) {
                     styles.push("border-green-500", "bg-green-100");
                 } else {
