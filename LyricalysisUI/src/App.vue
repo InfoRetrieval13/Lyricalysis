@@ -92,7 +92,9 @@
                     <DateSelector :data="query.data" />
                 </div>
 
-                <div class="end">
+                <div
+                    class="end"
+                    v-if="query.type != 'explicit'">
                     <select
                         v-model="query.end"
                         class="bg-red-500">
@@ -120,6 +122,17 @@
 
                 <div @click="clearAll">Clear All Fields</div>
             </div>
+        </div>
+
+        <div class="explicit">
+            <label for="explicit">Include Explicit Songs: </label>
+            <select
+                name="explicit"
+                id="explicit">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+                <option value="only">Only</option>
+            </select>
         </div>
 
         <div class="log">
@@ -165,7 +178,14 @@
                 this.search.push({ type: "date", start: "HAS", data: [], end: "AND" });
             },
             logSearch() {
-                console.log(this.search);
+                this.search.push({ type: "explicit", data: document.getElementById("explicit").value });
+                const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(this.search));
+                const downloadAnchorNode = document.createElement("a");
+                downloadAnchorNode.setAttribute("href", dataStr);
+                downloadAnchorNode.setAttribute("download", "search.json");
+                document.body.appendChild(downloadAnchorNode); // required for firefox
+                downloadAnchorNode.click();
+                downloadAnchorNode.remove();
             },
             removeLatest() {
                 this.search.pop();

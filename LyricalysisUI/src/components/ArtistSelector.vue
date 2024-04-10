@@ -3,7 +3,6 @@
         <div class="data flex flex-row gap-2 max-w-max flex-wrap items-start justify-start p-2">
             <div
                 v-for="(info, index) in data"
-                v-if="index != data.length - 1"
                 :class="applyClass(index)"
                 class="px-4">
                 {{ info }}
