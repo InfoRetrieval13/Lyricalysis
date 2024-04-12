@@ -7,7 +7,6 @@ app = Flask(__name__)
 
 @app.route('/', methods=['POST'])
 def query_parser():
-	#simulate incoming json from searchUI
 	query = request.get_json()
 
 	full_query = ''
