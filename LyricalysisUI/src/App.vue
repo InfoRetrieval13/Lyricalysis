@@ -202,6 +202,7 @@
                 </div>
                 <div class="links h-36 flex flex-row items-center gap-2">
                     <a
+                        v-if="v1"
                         :href="result.url"
                         target="_blank">
                         <svg
@@ -215,6 +216,7 @@
                         </svg>
                     </a>
                     <iframe
+                        v-if="v1"
                         :src="result.preview"
                         width="156"
                         height="40"
@@ -222,6 +224,16 @@
                         allowtransparency="false"
                         allow="encrypted-media; autoplay=false"
                         class="rounded-md overflow-hidden"></iframe>
+                    <iframe
+                        v-else
+                        style="border-radius: 12px"
+                        :src="spotifyEmbedUrl(result.track_id)"
+                        width="100%"
+                        height="152"
+                        frameBorder="0"
+                        allowfullscreen=""
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                        loading="lazy"></iframe>
                 </div>
             </div>
         </div>
@@ -240,6 +252,7 @@
         data() {
             return {
                 search: [],
+                v1: false,
                 results: [
                     {
                         track: ["Earned It (Fifty Shades Of Grey)"],
@@ -376,6 +389,10 @@
             await this.updateResults();
         },
         methods: {
+            spotifyEmbedUrl(track_id) {
+                let track = track_id[0];
+                return `https://open.spotify.com/embed/track/${track}`;
+            },
             addArtists() {
                 this.search.push({ type: "artists", start: "HAS", data: [], end: "AND" });
             },
