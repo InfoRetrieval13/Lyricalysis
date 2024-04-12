@@ -37,6 +37,10 @@ intensity = list(df['intensity'].unique())
 
 CORS(app, resources={r"/*": {"origins": "http://localhost:5173"}})
 
+@app.route('/', methods=['GET'])
+def index():
+    return {'message': 'Welcome to Lyricalysis API!'}
+
 @app.route('/artists', methods=['GET'])
 def get_artists():
     return {'artists': artists}
@@ -78,4 +82,4 @@ async def get_details(track_id):
     return {"url": url, "name": name, "preview_url": preview_url, "image": image}
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', debug=True)

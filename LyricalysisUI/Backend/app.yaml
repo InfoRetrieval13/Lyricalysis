@@ -1,0 +1,6 @@
+runtime: python310 # Adjust if needed
+env: standard
+
+handlers:
+    - url: /.* # All routes go to your Flask app
+      script: auto
