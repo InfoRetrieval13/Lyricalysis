@@ -21,7 +21,7 @@
             </select>
             <div class="w-[10vw] relative h-10">
                 <ul
-                    class="min-h-10 bg-greeny overflow-auto max-h-[50vh] absolute w-full rounded-md select-none cursor-pointer"
+                    class="min-h-10 bg-greeny overflow-auto max-h-[50vh] absolute w-full rounded-md select-none cursor-pointer z-10"
                     @click.stop>
                     <li
                         @click="toggle"
