@@ -18,14 +18,15 @@
                     :value="operator">
                     {{ operator }}
                 </option>
-                <select v-model="selectedGenre">
-                    <option
-                        v-for="genre in genres"
-                        :key="genre"
-                        :value="genre">
-                        {{ genre }}
-                    </option>
-                </select>
+            </select>
+            <select v-model="selectedGenre">
+                <option value="" disabled selected>Genres</option>
+                <option
+                    v-for="genre in genres"
+                    :key="genre"
+                    :value="genre">
+                    {{ genre }}
+                </option>
             </select>
         </div>
         <div class="flex w-[10vw] items-start justify-between gap-2">
@@ -46,11 +47,12 @@
                 genres: [],
                 operators: ["AND", "OR"],
                 selectedGenre: "",
-                genreOperator: "",
+                genreOperator: "AND",
             };
         },
-        mounted() {
-            this.getGenres();
+        async mounted() {
+            await this.getGenres();
+            console.log(this.genres);
         },
         methods: {
             async getGenres() {
@@ -62,7 +64,8 @@
                         },
                     });
                     let data = await response.json();
-                    this.genres = data;
+                    this.genres = data["genres"];
+                    console.log(data["genres"]);
                 } catch (error) {
                     console.error(error);
                 }

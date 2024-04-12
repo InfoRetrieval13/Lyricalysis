@@ -5,8 +5,8 @@
             class="search-bar items-start justify-start w-[95vw] min-h-[10vh] border-b-4 flex flex-wrap"
             style="row-gap: 1rem">
             <div
-                v-for="query in search"
-                class="flex items-start w-[30vw]">
+                v-for="(query, index) in search"
+                class="flex items-start w-[31vw] gap-2 ml-2">
                 <div
                     v-if="query.type == 'artists'"
                     class="flex flex-row items-center artists w-full">
@@ -93,8 +93,26 @@
                 </div>
 
                 <div
+                    v-else-if="query.type == 'intensity'"
+                    class="flex flex-row items-center intensity w-full">
+                    <div class="front">
+                        <div class="type">
+                            {{ query.type }}
+                        </div>
+                        <div class="start">
+                            <select v-model="query.start">
+                                <option value="HAS">HAS</option>
+                                <option value="NOT">NOT</option>
+                            </select>
+                        </div>
+                    </div>
+                    <IntensitySelector :data="query.data" />
+                </div>
+
+                <div
                     class="end"
-                    v-if="query.type != 'explicit'">
+                    v-if="query.type != 'explicit'"
+                    :class="hideLast(index)">
                     <select
                         v-model="query.end"
                         class="bg-red-500">
@@ -115,6 +133,8 @@
                 <div @click="addDate">Add Date Field</div>
 
                 <div @click="addDuration">Add Duration Field</div>
+
+                <div @click="addIntensity">Add Intensity Field</div>
             </div>
 
             <div class="deleters flex flex-row gap-1">
@@ -147,6 +167,7 @@
     import EmotionSelector from "./components/EmotionSelector.vue";
     import DateSelector from "./components/DateSelector.vue";
     import DurationSelector from "./components/DurationSelector.vue";
+    import IntensitySelector from "./components/IntensitySelector.vue";
     export default {
         name: "App",
         data() {
@@ -160,6 +181,7 @@
             EmotionSelector,
             DateSelector,
             DurationSelector,
+            IntensitySelector,
         },
         methods: {
             addArtists() {
@@ -177,21 +199,54 @@
             addDate() {
                 this.search.push({ type: "date", start: "HAS", data: [], end: "AND" });
             },
-            logSearch() {
-                this.search.push({ type: "explicit", data: document.getElementById("explicit").value });
-                const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(this.search));
-                const downloadAnchorNode = document.createElement("a");
-                downloadAnchorNode.setAttribute("href", dataStr);
-                downloadAnchorNode.setAttribute("download", "search.json");
-                document.body.appendChild(downloadAnchorNode); // required for firefox
-                downloadAnchorNode.click();
-                downloadAnchorNode.remove();
+            addIntensity() {
+                this.search.push({ type: "intensity", start: "HAS", data: [], end: "AND" });
+            },
+            async logSearch() {
+                let searchQuery = JSON.parse(JSON.stringify(this.search));
+                for (let elem of searchQuery) {
+                    // remove first element of elem.data
+                    elem.data.shift();
+                }
+                // set the end value of the last element to null
+                searchQuery[this.search.length - 1].end = null;
+                searchQuery.push({ type: "explicit", data: document.getElementById("explicit").value });
+                // send the search data to the backend
+                try {
+                    let response = await fetch("http://localhost:5000/search", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify(searchQuery), // Send the JSON data directly
+                    });
+                    let data = await response.json();
+                } catch (error) {
+                    console.error(error);
+                }
             },
             removeLatest() {
                 this.search.pop();
             },
             clearAll() {
                 this.search = [];
+            },
+        },
+        computed: {
+            hideLast() {
+                return (index) => {
+                    if (this.search[this.search.length - 1].type != "explicit") {
+                        if (index == this.search.length - 1) {
+                            return "invisible";
+                        }
+                        return "";
+                    } else {
+                        if (index == this.search.length - 2) {
+                            return "invisible";
+                        }
+                        return "";
+                    }
+                };
             },
         },
     };
@@ -230,6 +285,10 @@
 
     .duration {
         background-color: #15616d;
+    }
+
+    .intensity {
+        background-color: #f4a261;
     }
 
     .front {

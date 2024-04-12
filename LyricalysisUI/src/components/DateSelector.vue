@@ -10,7 +10,7 @@
             </div>
         </div>
 
-        <div class="drop w-[15vw] flex items-start justify-between gap-2">
+        <div class="drop w-[20vw] flex items-start justify-center gap-2">
             <select v-model="dateBoolOperator">
                 <option
                     v-for="operator in boolOperators"
@@ -29,6 +29,12 @@
             </select>
             <select v-model="selectedMonth">
                 <option
+                    value=""
+                    disabled
+                    selected>
+                    Month
+                </option>
+                <option
                     v-for="month in months"
                     :key="month"
                     :value="month">
@@ -37,6 +43,12 @@
             </select>
 
             <select v-model="selectedYear">
+                <option
+                    value=""
+                    disabled
+                    selected>
+                    Year
+                </option>
                 <option
                     v-for="year in years"
                     :key="year"
@@ -61,12 +73,12 @@
             return {
                 months: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
                 years: Array.from({ length: 50 }, (_, i) => new Date().getFullYear() - i),
-                operators: ["Earlier than", "Later than"],
+                operators: ["Earlier Than / Equals", "Later Than / Equals"],
                 boolOperators: ["AND", "OR"],
                 selectedMonth: "",
                 selectedYear: "",
-                dateOperator: "",
-                dateBoolOperator: "",
+                dateOperator: "Later Than / Equals",
+                dateBoolOperator: "AND",
             };
         },
         methods: {

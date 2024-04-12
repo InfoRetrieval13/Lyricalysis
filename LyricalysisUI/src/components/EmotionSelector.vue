@@ -10,7 +10,7 @@
             </div>
         </div>
 
-        <div class="drop w-[10vw] flex items-start justify-between gap-2">
+        <div class="drop w-[20vw] flex items-start justify-center gap-2">
             <select v-model="emotionOperator">
                 <option
                     v-for="operator in operators"
@@ -20,6 +20,12 @@
                 </option>
             </select>
             <select v-model="selectedEmotion">
+                <option
+                    value=""
+                    disabled
+                    selected>
+                    Emotions
+                </option>
                 <option
                     v-for="emotion in emotions"
                     :key="emotion"
@@ -46,7 +52,7 @@
                 emotions: ["Happy", "Sad", "Angry", "Excited", "Calm", "Anxious", "Depressed"],
                 operators: ["AND", "OR"],
                 selectedEmotion: "",
-                emotionOperator: "",
+                emotionOperator: "AND",
             };
         },
         mounted() {
@@ -62,7 +68,7 @@
                         },
                     });
                     let data = await response.json();
-                    this.emotions = data;
+                    this.emotions = data["emotions"];
                 } catch (error) {
                     console.error(error);
                 }

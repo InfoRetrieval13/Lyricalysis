@@ -11,7 +11,7 @@
         </div>
 
         <div class="drop w-[20vw] flex items-start justify-center gap-2">
-            <select v-model="durationBoolOperator">
+            <select v-model="intensityBoolOperator">
                 <option
                     v-for="operator in boolOperators"
                     :key="operator"
@@ -19,7 +19,7 @@
                     {{ operator }}
                 </option>
             </select>
-            <select v-model="durationOperator">
+            <select v-model="intensityOperator">
                 <option
                     v-for="operator in operators"
                     :key="operator"
@@ -28,22 +28,20 @@
                 </option>
             </select>
 
-            <select v-model="duration">
+            <select v-model="selectedIntensity">
                 <option
                     value=""
                     disabled
                     selected>
-                    Duration
+                    Intensity
                 </option>
                 <option
-                    v-for="i in durationOptions"
-                    :key="i"
-                    :value="i">
-                    {{ i }}
+                    v-for="intensity in intensities"
+                    :key="intensity"
+                    :value="intensity">
+                    {{ intensity }}
                 </option>
             </select>
-
-            <div class="w-15 h-10 bg-green-500 text-white rounded-md flex items-center justify-center px-2">Seconds</div>
         </div>
 
         <div class="flex w-[10vw] items-start justify-between gap-2">
@@ -55,25 +53,25 @@
 </template>
 <script>
     export default {
-        name: "DurationSelector",
+        name: "IntensitySelector",
         props: { data: Array },
         data() {
             return {
-                operators: ["Shorter Than / Equals", "Longer Than / Equals"],
+                operators: ["Less Than / Equals", "More Than / Equals"],
                 boolOperators: ["AND", "OR"],
-                duration: "",
-                durationOptions: [15, 30, 45, 60, 90, 120, 150, 180, 210, 240, 270, 300, 360, 420, 480, 540, 600],
-                durationOperator: "Shorter Than / Equals",
-                durationBoolOperator: "AND",
+                intensities: [1, 2, 3],
+                selectedIntensity: "",
+                intensityOperator: "More Than / Equals",
+                intensityBoolOperator: "AND",
             };
         },
         methods: {
             updateElement() {
-                if (!this.duration || !this.durationOperator || !this.durationBoolOperator) {
+                if (!this.selectedIntensity || !this.intensityOperator || !this.intensityBoolOperator) {
                     return;
                 }
-                this.data.push(this.durationBoolOperator);
-                this.data.push(`${this.durationOperator} ${this.duration} seconds`);
+                this.data.push(this.intensityBoolOperator);
+                this.data.push(`${this.intensityOperator} ${this.selectedIntensity}`);
             },
             removeElement() {
                 this.data.pop();

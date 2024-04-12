@@ -26,7 +26,7 @@
                     <li
                         @click="toggle"
                         class="sticky top-0 h-10 bg-green-500">
-                        {{ selectedArtist }}
+                        {{ selectedArtist || "Artists" }}
                     </li>
                     <li
                         v-show="showArtists"
