@@ -5,14 +5,26 @@ from util import translator
 f = open('sample_search.json')
 query = json.load(f)
 
-
-query_string = ''
+full_query = ''
 
 #iterate through the json object
 for i in range(0, len(query)):
 	condition = query[i]
-	field = condition['type']
-	negation = condition['start']
-	connector = condition['end']
 
-	translator
+	field = condition['type']
+	if 'start' in condition: negation = condition['start']
+	else: negation = None
+
+	data = condition['data']
+
+	if 'end' in condition: connector = condition['end']
+	else: connector = None
+
+	field_query = [negation, field, data, connector]
+	string_field_query = translator(field_query)
+
+	full_query += string_field_query
+	
+print(full_query)
+
+

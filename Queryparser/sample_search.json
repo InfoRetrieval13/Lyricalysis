@@ -1,1 +1,58 @@
-[{"type":"artists","start":"HAS","data":[],"end":"AND"},{"type":"artists","start":"HAS","data":[],"end":"AND"},{"type":"genres","start":"HAS","data":[],"end":"OR"},{"type":"artists","start":"HAS","data":[],"end":"AND"},{"type":"genres","start":"HAS","data":[],"end":"AND"},{"type":"explicit","data":"yes"}]
+[
+    {
+        "type": "artists",
+        "start": "HAS",
+        "data": [
+            "Alexandra Stan",
+            "OR",
+            "Taylor Swift"
+        ],
+        "end": "AND"
+    },
+    {
+        "type": "genres",
+        "start": "NOT",
+        "data": [
+            "Canadian hip hop"
+        ],
+        "end": "AND"
+    },
+    {
+        "type": "emotions",
+        "start": "HAS",
+        "data": [
+            "Pensiveness",
+            "OR",
+            "Grief"
+        ],
+        "end": "AND"
+    },
+    {
+        "type": "date",
+        "start": "HAS",
+        "data": [
+            "Later Than / Equals January 2009"
+        ],
+        "end": "AND"
+    },
+    {
+        "type": "duration",
+        "start": "HAS",
+        "data": [
+            "Shorter Than / Equals 600 seconds"
+        ],
+        "end": "AND"
+    },
+    {
+        "type": "intensity",
+        "start": "NOT",
+        "data": [
+            "More Than / Equals 2"
+        ],
+        "end": null
+    },
+    {
+        "type": "explicit",
+        "data": "yes"
+    }
+]
