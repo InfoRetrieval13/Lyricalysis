@@ -61,7 +61,7 @@
         methods: {
             async getEmotions() {
                 try {
-                    let response = await fetch("http://localhost:5000/emotions", {
+                    let response = await fetch("https://lyricalysis-v6esf4zmfa-as.a.run.app/emotions", {
                         method: "GET",
                         headers: {
                             "Content-Type": "application/json",

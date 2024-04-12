@@ -62,7 +62,7 @@
         methods: {
             async getGenres() {
                 try {
-                    let response = await fetch("http://localhost:5000/genres", {
+                    let response = await fetch("https://lyricalysis-v6esf4zmfa-as.a.run.app/genres", {
                         method: "GET",
                         headers: {
                             "Content-Type": "application/json",

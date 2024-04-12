@@ -91,7 +91,7 @@
             },
             async getArtists() {
                 try {
-                    let response = await fetch("http://localhost:5000/artists", {
+                    let response = await fetch("https://lyricalysis-v6esf4zmfa-as.a.run.app/artists", {
                         method: "GET",
                         headers: {
                             "Content-Type": "application/json",
