@@ -35,7 +35,7 @@ emotions.sort()
 emotions = [emotion.capitalize() for emotion in emotions]
 intensity = list(df['intensity'].unique())
 
-CORS(app, resources={r"/*": {"origins": "http://localhost:5173"}})
+CORS(app)
 
 @app.route('/', methods=['GET'])
 def index():
