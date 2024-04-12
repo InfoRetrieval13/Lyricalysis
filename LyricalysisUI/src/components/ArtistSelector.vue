@@ -21,19 +21,19 @@
             </select>
             <div class="w-[10vw] relative h-10">
                 <ul
-                    class="min-h-10 bg-green-500 overflow-auto max-h-[50vh] absolute w-full rounded-md"
+                    class="min-h-10 bg-greeny overflow-auto max-h-[50vh] absolute w-full rounded-md select-none cursor-pointer"
                     @click.stop>
                     <li
                         @click="toggle"
-                        class="sticky top-0 h-10 bg-green-500">
+                        class="sticky top-0 h-10 bg-greeny">
                         {{ selectedArtist || "Artists" }}
                     </li>
                     <li
                         v-show="showArtists"
-                        class="py-2 border-y-2 sticky top-10 bg-green-500">
+                        class="py-2 border-y-2 sticky top-10 bg-greeny">
                         <input
                             v-model="query"
-                            class="w-full h-full bg-white text-green-500 py-2 text-sm px-1"
+                            class="w-full h-full bg-white text-greeny py-2 text-sm px-1"
                             type="text"
                             placeholder="Search for an artist"
                             @keyup="filterArtists" />
@@ -118,11 +118,11 @@
                 this.data.pop();
             },
             applyClass(index) {
-                let styles = ["border-2", "px-4"];
+                let styles = ["border-2", "px-4", "text-violet", "font-semibold", "font-inter"];
                 if (index % 2 == 1) {
-                    styles.push("border-green-500", "bg-green-100");
+                    styles.push("border-greeny", "bg-green-100");
                 } else {
-                    styles.push("border-blue-500", "bg-blue-100");
+                    styles.push("border-bluey", "bg-blue-100");
                 }
                 return styles;
             },

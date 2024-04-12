@@ -85,11 +85,11 @@
                 this.data.pop();
             },
             applyClass(index) {
-                let styles = ["border-2", "px-4"];
+                let styles = ["border-2", "px-4", "text-violet", "font-semibold", "font-inter"];
                 if (index % 2 == 1) {
-                    styles.push("border-green-500", "bg-green-100");
+                    styles.push("border-greeny", "bg-green-100");
                 } else {
-                    styles.push("border-blue-500", "bg-blue-100");
+                    styles.push("border-bluey", "bg-blue-100");
                 }
                 return styles;
             },
