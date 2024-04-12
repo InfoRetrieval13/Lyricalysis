@@ -203,13 +203,13 @@
     }
 
     select {
-        @apply min-w-10 h-10 bg-green-500 text-white px-3;
+        @apply min-w-20 h-10 bg-green-500 text-white px-4 rounded-md;
     }
 </style>
 
 <style scoped>
     .type {
-        @apply uppercase text-center;
+        @apply uppercase text-center font-inter font-semibold select-none;
     }
 
     .artists {

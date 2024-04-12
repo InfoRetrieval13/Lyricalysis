@@ -1,24 +1,16 @@
 <template>
     <div class="w-[24vw] flex-wrap flex flex-col gap-2 items-center shadow-sm rounded-sm py-2">
         <div class="data flex flex-row gap-2 max-w-max flex-wrap items-start justify-start p-2">
-            <div
-                v-for="(info, index) in data"
-                :class="applyClass(index)"
-                class="px-4">
-                {{ info }}
+            <div v-for="(info, index) in data">
+                <div
+                    v-if="index != 0"
+                    :class="applyClass(index)">
+                    {{ info }}
+                </div>
             </div>
         </div>
 
         <div class="drop w-[10vw] flex items-start justify-between gap-2">
-            <select v-model="selectedArtist">
-                <option
-                    v-for="artist in artists"
-                    :key="artist"
-                    :value="artist">
-                    {{ artist }}
-                </option>
-            </select>
-
             <select v-model="artistOperator">
                 <option
                     v-for="operator in operators"
@@ -27,6 +19,34 @@
                     {{ operator }}
                 </option>
             </select>
+            <div class="w-[10vw] relative h-10">
+                <ul
+                    class="min-h-10 bg-green-500 overflow-auto max-h-[50vh] absolute w-full rounded-md"
+                    @click.stop>
+                    <li
+                        @click="toggle"
+                        class="sticky top-0 h-10 bg-green-500">
+                        {{ selectedArtist }}
+                    </li>
+                    <li
+                        v-show="showArtists"
+                        class="py-2 border-y-2 sticky top-10 bg-green-500">
+                        <input
+                            v-model="query"
+                            class="w-full h-full bg-white text-green-500 py-2 text-sm px-1"
+                            type="text"
+                            placeholder="Search for an artist"
+                            @keyup="filterArtists" />
+                    </li>
+                    <li
+                        v-for="artist in filteredArtists"
+                        v-show="showArtists"
+                        class="flex items-center cursor-pointer border-b-2 border-dotted py-2"
+                        @click="select(artist)">
+                        {{ artist }}
+                    </li>
+                </ul>
+            </div>
         </div>
         <div class="flex w-[10vw] items-start justify-between gap-2">
             <button @click="updateElement">Add</button>
@@ -43,33 +63,89 @@
         },
         data() {
             return {
-                artists: ["Taylor Swift", "Saylor Twift", "League of Legends", "DOTA"],
+                artists: [],
+                filteredArtists: [],
+                query: "",
+                showArtists: false,
                 operators: ["AND", "OR"],
                 selectedArtist: "",
-                artistOperator: "",
+                artistOperator: "AND",
             };
         },
+        mounted() {
+            this.getArtists();
+            this.filteredArtists = this.artists;
+            this.filterArtists();
+            window.addEventListener("click", this.hideArtists);
+        },
+        beforeDestroy() {
+            window.removeEventListener("click", this.hideArtists);
+        },
         methods: {
+            toggle() {
+                this.filterArtists();
+                this.showArtists = !this.showArtists;
+            },
+            hideArtists() {
+                this.showArtists = false;
+            },
+            async getArtists() {
+                try {
+                    let response = await fetch("http://localhost:5000/artists", {
+                        method: "GET",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                    });
+
+                    if (response.ok) {
+                        let data = await response.json();
+                        this.artists = data["artists"];
+                    }
+                } catch (error) {
+                    console.error(error);
+                }
+            },
             updateElement() {
                 if (!this.selectedArtist || !this.artistOperator) {
                     return;
                 }
-                this.data.push(this.selectedArtist);
                 this.data.push(this.artistOperator);
+                this.data.push(this.selectedArtist);
             },
             removeElement() {
                 this.data.pop();
                 this.data.pop();
             },
             applyClass(index) {
-                let styles = ["border-2"];
-                if (index % 2 == 0) {
+                let styles = ["border-2", "px-4"];
+                if (index % 2 == 1) {
                     styles.push("border-green-500", "bg-green-100");
                 } else {
                     styles.push("border-blue-500", "bg-blue-100");
                 }
                 return styles;
             },
+            filterArtists() {
+                if (!this.query) {
+                    this.filteredArtists = this.artists;
+                    return;
+                }
+
+                this.filteredArtists = this.artists.filter((artist) => {
+                    return artist.toLowerCase().includes(this.query.toLowerCase());
+                });
+            },
+            select(artist) {
+                this.selectedArtist = artist;
+                this.showArtists = false;
+            },
         },
     };
 </script>
+
+<style scoped>
+    li {
+        @apply min-h-10 text-white px-4 flex items-center;
+    }
+</style>
