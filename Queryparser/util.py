@@ -29,11 +29,8 @@ def translator(field_query):
 		field = field_query[1][:-1]
 		string = ''
 		for data in field_query[2]:
-			if data == 'OR':
-				string = string + 'OR'
-
-			elif data == 'AND':
-				string = string + 'AND'
+			if data == 'OR' or data == 'AND':
+				string = string + data
 
 			else:
 				string = string + field + ':' + data
@@ -46,11 +43,8 @@ def translator(field_query):
 		field = field_query[1]
 		string = ''
 		for data in field_query[2]:
-			if data == 'OR':
-				string = string + 'OR'
-
-			elif data == 'AND':
-				string = string + 'AND'
+			if data == 'OR' or data == 'AND':
+				string = string + data
 
 			else:
 				data = data.split(' ')

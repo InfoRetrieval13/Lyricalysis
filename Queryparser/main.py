@@ -28,3 +28,4 @@ for i in range(0, len(query)):
 print(full_query)
 
 
+
