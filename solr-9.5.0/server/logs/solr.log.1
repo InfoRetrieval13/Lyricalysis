@@ -1,0 +1,285 @@
+2024-04-03 15:23:59.305 INFO  (main) [c: s: r: x: t:] o.e.j.s.Server jetty-10.0.19; built: 2023-12-15T20:38:32.477Z; git: 8492d1c78f122bb30cce20aecfa07e7283facd47; jvm 17.0.1+12-LTS-39
+2024-04-03 15:24:00.096 WARN  (main) [c: s: r: x: t:] o.e.j.u.DeprecationWarning Using @Deprecated Class org.eclipse.jetty.servlet.listener.ELContextCleaner
+2024-04-03 15:24:00.174 INFO  (main) [c: s: r: x: t:] o.a.s.s.CoreContainerProvider Using logger factory org.apache.logging.slf4j.Log4jLoggerFactory
+2024-04-03 15:24:00.190 INFO  (main) [c: s: r: x: t:] o.a.s.s.CoreContainerProvider  ___      _       Welcome to Apache Solr™ version 9.5.0
+2024-04-03 15:24:00.191 INFO  (main) [c: s: r: x: t:] o.a.s.s.CoreContainerProvider / __| ___| |_ _   Starting in standalone mode on port 8983
+2024-04-03 15:24:00.192 INFO  (main) [c: s: r: x: t:] o.a.s.s.CoreContainerProvider \__ \/ _ \ | '_|  Install dir: /Users/copseatingdonuts/solr-9.5.0
+2024-04-03 15:24:00.192 INFO  (main) [c: s: r: x: t:] o.a.s.s.CoreContainerProvider |___/\___/_|_|    Start time: 2024-04-03T15:24:00.192619Z
+2024-04-03 15:24:00.199 INFO  (main) [c: s: r: x: t:] o.a.s.s.CoreContainerProvider Solr started with "-XX:+CrashOnOutOfMemoryError" that will crash on any OutOfMemoryError exception. The cause of the OOME will be logged in the crash file at the following path: /Users/copseatingdonuts/solr-9.5.0/server/logs/jvm_crash_23151.log
+2024-04-03 15:24:00.275 INFO  (main) [c: s: r: x: t:] o.a.s.s.CoreContainerProvider Solr Home: /Users/copseatingdonuts/solr-9.5.0/server/solr (source: system property: solr.solr.home)
+2024-04-03 15:24:00.318 INFO  (main) [c: s: r: x: t:] o.a.s.c.SolrXmlConfig Loading solr.xml from /Users/copseatingdonuts/solr-9.5.0/server/solr/solr.xml
+2024-04-03 15:24:00.418 INFO  (main) [c: s: r: x: t:] o.a.s.c.SolrResourceLoader Added 1 libs to classloader, from paths: [/Users/copseatingdonuts/solr-9.5.0/lib]
+2024-04-03 15:24:02.163 INFO  (main) [c: s: r: x: t:] o.a.s.u.t.SimplePropagator Always-on trace id generation enabled.
+2024-04-03 15:24:02.870 WARN  (main) [c: s: r: x: t:] o.a.s.u.StartupLoggingUtils Jetty request logging enabled. Will retain logs for last 3 days. See chapter "Configuring Logging" in reference guide for how to configure.
+2024-04-03 15:24:02.874 WARN  (main) [c: s: r: x: t:] o.a.s.c.CoreContainer Not all security plugins configured!  authentication=disabled authorization=disabled.  Solr is only as secure as you make it. Consider configuring authentication/authorization before exposing Solr to users internal or external.  See https://s.apache.org/solrsecurity for more info
+2024-04-03 15:24:03.285 INFO  (main) [c: s: r: x: t:] o.a.s.c.CorePropertiesLocator Found 0 core definitions underneath /Users/copseatingdonuts/solr-9.5.0/server/solr
+2024-04-03 15:24:03.746 WARN  (main) [c: s: r: x: t:] o.g.j.m.i.MessagingBinders A class jakarta.activation.DataSource for a default provider MessageBodyWriter<jakarta.activation.DataSource> was not found. The provider is not available.
+2024-04-03 15:24:04.388 INFO  (main) [c: s: r: x: t:] o.a.s.j.SolrRequestAuthorizer Creating a new SolrRequestAuthorizer
+2024-04-03 15:24:04.731 INFO  (main) [c: s: r: x: t:] o.e.j.s.h.ContextHandler Started o.e.j.w.WebAppContext@62d363ab{solr-jetty-context.xml,/solr,file:///Users/copseatingdonuts/solr-9.5.0/server/solr-webapp/webapp/,AVAILABLE}{/Users/copseatingdonuts/solr-9.5.0/server/solr-webapp/webapp}
+2024-04-03 15:24:04.752 INFO  (main) [c: s: r: x: t:] o.e.j.s.RequestLogWriter Opened /Users/copseatingdonuts/solr-9.5.0/server/logs/2024_04_03.request.log
+2024-04-03 15:24:04.761 INFO  (main) [c: s: r: x: t:] o.e.j.s.AbstractConnector Started ServerConnector@192d74fb{HTTP/1.1, (http/1.1, h2c)}{127.0.0.1:8983}
+2024-04-03 15:24:04.764 INFO  (main) [c: s: r: x: t:] o.e.j.s.Server Started Server@2364305a{STARTING}[10.0.19,sto=0] @9801ms
+2024-04-03 15:24:26.951 INFO  (qtp851912430-18-localhost-1) [c: s: r: x: t:localhost-1] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=javabin&version=2} status=0 QTime=103
+2024-04-03 15:24:49.188 INFO  (qtp851912430-20-localhost-3) [c: s: r: x: t:localhost-3] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1712157888888} status=0 QTime=6
+2024-04-03 15:24:49.218 INFO  (qtp851912430-21-localhost-4) [c: s: r: x: t:localhost-4] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1712157888889} status=0 QTime=38
+2024-04-03 15:24:49.465 INFO  (qtp851912430-21-localhost-5) [c: s: r: x: t:localhost-5] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1712157888889} status=0 QTime=7
+2024-04-03 15:26:09.636 INFO  (qtp851912430-20-localhost-6) [c: s: r: x: t:localhost-6] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=javabin&version=2} status=0 QTime=24
+2024-04-03 15:26:09.689 INFO  (qtp851912430-20-localhost-7) [c: s: r: x: t:localhost-7] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=javabin&version=2} status=0 QTime=6
+2024-04-03 15:26:09.739 INFO  (qtp851912430-22-localhost-8) [c: s: r: x:lyricalysis t:localhost-8] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={core=lyricalysis&action=STATUS&indexInfo=true&wt=javabin&version=2} status=0 QTime=9
+2024-04-03 15:26:09.858 INFO  (qtp851912430-18-localhost-9) [c: s: r: x:lyricalysis t:localhost-9] o.a.s.h.a.CoreAdminOperation core create command name=lyricalysis&action=CREATE&instanceDir=lyricalysis&wt=javabin&version=2
+2024-04-03 15:26:09.993 INFO  (qtp851912430-18-localhost-9) [c: s: r: x:lyricalysis t:localhost-9] o.a.s.c.SolrConfig Using Lucene MatchVersion: 9.9.0
+2024-04-03 15:26:10.185 INFO  (qtp851912430-18-localhost-9) [c: s: r: x:lyricalysis t:localhost-9] o.a.s.s.IndexSchema Schema name=default-config
+2024-04-03 15:26:10.896 INFO  (qtp851912430-18-localhost-9) [c: s: r: x:lyricalysis t:localhost-9] o.a.s.s.IndexSchema Loaded schema default-config/1.6 with uniqueid field id
+2024-04-03 15:26:10.896 INFO  (qtp851912430-18-localhost-9) [c: s: r: x:lyricalysis t:localhost-9] o.a.s.c.CoreContainer Creating SolrCore 'lyricalysis' using configuration from instancedir /Users/copseatingdonuts/solr-9.5.0/server/solr/lyricalysis, trusted=true
+2024-04-03 15:26:10.964 INFO  (qtp851912430-18-localhost-9) [c: s: r: x:lyricalysis t:localhost-9] o.a.s.c.SolrCore Opening new SolrCore at [/Users/copseatingdonuts/solr-9.5.0/server/solr/lyricalysis], dataDir=[/Users/copseatingdonuts/solr-9.5.0/server/solr/lyricalysis/data/]
+2024-04-03 15:26:12.900 INFO  (qtp851912430-18-localhost-9) [c: s: r: x:lyricalysis t:localhost-9] o.a.s.j.SolrRequestAuthorizer Creating a new SolrRequestAuthorizer
+2024-04-03 15:26:12.959 INFO  (qtp851912430-18-localhost-9) [c: s: r: x:lyricalysis t:localhost-9] o.a.s.u.UpdateHandler Using UpdateLog implementation: org.apache.solr.update.UpdateLog
+2024-04-03 15:26:12.959 INFO  (qtp851912430-18-localhost-9) [c: s: r: x:lyricalysis t:localhost-9] o.a.s.u.UpdateLog Initializing UpdateLog: dataDir= defaultSyncLevel=FLUSH numRecordsToKeep=100 maxNumLogsToKeep=10 numVersionBuckets=65536
+2024-04-03 15:26:12.979 INFO  (qtp851912430-18-localhost-9) [c: s: r: x:lyricalysis t:localhost-9] o.a.s.u.CommitTracker Hard AutoCommit: if uncommitted for 15000ms; 
+2024-04-03 15:26:12.980 INFO  (qtp851912430-18-localhost-9) [c: s: r: x:lyricalysis t:localhost-9] o.a.s.u.CommitTracker Soft AutoCommit: if uncommitted for 3000ms; 
+2024-04-03 15:26:13.111 INFO  (qtp851912430-18-localhost-9) [c: s: r: x:lyricalysis t:localhost-9] o.a.s.r.ManagedResourceStorage File-based storage initialized to use dir: /Users/copseatingdonuts/solr-9.5.0/server/solr/lyricalysis/conf
+2024-04-03 15:26:13.159 INFO  (qtp851912430-18-localhost-9) [c: s: r: x:lyricalysis t:localhost-9] o.a.s.s.DirectSolrSpellChecker init: {maxEdits=2, minPrefix=1, maxInspections=5, minQueryLength=4, name=default, field=_text_, classname=solr.DirectSolrSpellChecker, distanceMeasure=internal, accuracy=0.5, maxQueryFrequency=0.01}
+2024-04-03 15:26:13.183 INFO  (qtp851912430-18-localhost-9) [c: s: r: x:lyricalysis t:localhost-9] o.a.s.h.ReplicationHandler Commits will be reserved for 10000 ms
+2024-04-03 15:26:13.188 INFO  (searcherExecutor-13-thread-1-processing-lyricalysis localhost-9) [c: s: r: x:lyricalysis t:localhost-9] o.a.s.c.QuerySenderListener QuerySenderListener done.
+2024-04-03 15:26:13.188 INFO  (searcherExecutor-13-thread-1-processing-lyricalysis localhost-9) [c: s: r: x:lyricalysis t:localhost-9] o.a.s.h.c.SpellCheckComponent Loading spell index for spellchecker: default
+2024-04-03 15:26:13.192 INFO  (qtp851912430-18-localhost-9) [c: s: r: x: t:localhost-9] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={name=lyricalysis&action=CREATE&instanceDir=lyricalysis&wt=javabin&version=2} status=0 QTime=3335
+2024-04-03 15:26:13.208 INFO  (searcherExecutor-13-thread-1-processing-lyricalysis localhost-9) [c: s: r: x:lyricalysis t:localhost-9] o.a.s.c.SolrCore Registered new searcher autowarm time: 0 ms
+2024-04-03 15:26:20.609 INFO  (qtp851912430-20-localhost-11) [c: s: r: x: t:localhost-11] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1712157888888} status=0 QTime=0
+2024-04-03 15:26:20.639 INFO  (qtp851912430-18-localhost-10) [c: s: r: x: t:localhost-10] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={wt=json&_=1712157888888} status=0 QTime=30
+2024-04-03 15:26:20.646 INFO  (qtp851912430-40-localhost-12) [c: s: r: x: t:localhost-12] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1712157888889} status=0 QTime=29
+2024-04-03 15:26:20.731 INFO  (qtp851912430-23-localhost-14) [c: s: r: x: t:localhost-14] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1712157888888} status=0 QTime=0
+2024-04-03 15:26:20.742 INFO  (qtp851912430-40-localhost-13) [c: s: r: x: t:localhost-13] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1712157888889} status=0 QTime=12
+2024-04-03 15:26:20.767 INFO  (qtp851912430-25-localhost-15) [c: s: r: x: t:localhost-15] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={wt=json&_=1712157888888} status=0 QTime=4
+2024-04-03 15:38:07.017 INFO  (qtp851912430-26-localhost-16) [c: s: r: x:lyricalysis t:localhost-16] o.a.s.s.ManagedIndexSchema Upgraded to managed schema at /Users/copseatingdonuts/solr-9.5.0/server/solr/lyricalysis/conf/managed-schema.xml
+2024-04-03 15:38:11.477 INFO  (searcherExecutor-13-thread-1-processing-lyricalysis) [c: s: r: x:lyricalysis t:] o.a.s.c.QuerySenderListener QuerySenderListener done.
+2024-04-03 15:38:11.513 INFO  (searcherExecutor-13-thread-1-processing-lyricalysis) [c: s: r: x:lyricalysis t:] o.a.s.c.SolrCore Registered new searcher autowarm time: 17 ms
+2024-04-03 15:38:14.124 INFO  (searcherExecutor-13-thread-1-processing-lyricalysis) [c: s: r: x:lyricalysis t:] o.a.s.c.QuerySenderListener QuerySenderListener done.
+2024-04-03 15:38:14.137 INFO  (searcherExecutor-13-thread-1-processing-lyricalysis) [c: s: r: x:lyricalysis t:] o.a.s.c.SolrCore Registered new searcher autowarm time: 0 ms
+2024-04-03 15:38:17.215 INFO  (searcherExecutor-13-thread-1-processing-lyricalysis) [c: s: r: x:lyricalysis t:] o.a.s.c.QuerySenderListener QuerySenderListener done.
+2024-04-03 15:38:17.225 INFO  (searcherExecutor-13-thread-1-processing-lyricalysis) [c: s: r: x:lyricalysis t:] o.a.s.c.SolrCore Registered new searcher autowarm time: 0 ms
+2024-04-03 15:38:19.776 INFO  (searcherExecutor-13-thread-1-processing-lyricalysis) [c: s: r: x:lyricalysis t:] o.a.s.c.QuerySenderListener QuerySenderListener done.
+2024-04-03 15:38:19.786 INFO  (searcherExecutor-13-thread-1-processing-lyricalysis) [c: s: r: x:lyricalysis t:] o.a.s.c.SolrCore Registered new searcher autowarm time: 0 ms
+2024-04-03 15:38:23.603 INFO  (searcherExecutor-13-thread-1-processing-lyricalysis) [c: s: r: x:lyricalysis t:] o.a.s.c.QuerySenderListener QuerySenderListener done.
+2024-04-03 15:38:23.611 INFO  (searcherExecutor-13-thread-1-processing-lyricalysis) [c: s: r: x:lyricalysis t:] o.a.s.c.SolrCore Registered new searcher autowarm time: 0 ms
+2024-04-03 15:38:24.030 INFO  (qtp851912430-26-localhost-16) [c: s: r: x:lyricalysis t:localhost-16] o.a.s.u.p.LogUpdateProcessorFactory webapp=/solr path=/update params={}{add=[f55630b7-8f37-46cd-8be5-6f736fa36652 (1795328507424800768), 8bcd32ab-1a03-4459-bdda-1bdb32dfd146 (1795328507543289856), 0ecd3756-df93-45ee-8315-1a6d86919804 (1795328507548532736), efb0c947-ab0e-43da-bf2e-5106a5a4eee8 (1795328507552727040), 61bd79a7-36d0-455a-b08b-fc1bb2c1ec57 (1795328507556921344), 1ffd32c8-852e-4028-8234-4d374f7bba5c (1795328507561115648), 48bd7cc0-e129-477d-b495-70d272786cd0 (1795328507566358528), f364c037-a2a2-4e28-a1b6-55efabbb6c3b (1795328507572649984), 138972fc-99cb-4717-8518-9ac934dbcaec (1795328507576844288), fe334f4d-6d2e-4d3e-a2c8-17fe85492e6d (1795328507581038592), ... (24561 adds)]} 0 17690
+2024-04-03 15:38:25.180 INFO  (searcherExecutor-13-thread-1-processing-lyricalysis) [c: s: r: x:lyricalysis t:] o.a.s.c.QuerySenderListener QuerySenderListener done.
+2024-04-03 15:38:25.196 INFO  (searcherExecutor-13-thread-1-processing-lyricalysis) [c: s: r: x:lyricalysis t:] o.a.s.c.SolrCore Registered new searcher autowarm time: 0 ms
+2024-04-03 15:38:45.886 INFO  (qtp851912430-23-localhost-17) [c: s: r: x: t:localhost-17] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1712157888888} status=0 QTime=1
+2024-04-03 15:38:45.915 INFO  (qtp851912430-22-localhost-18) [c: s: r: x: t:localhost-18] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1712157888889} status=0 QTime=26
+2024-04-03 15:38:45.951 INFO  (qtp851912430-46-localhost-19) [c: s: r: x: t:localhost-19] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1712158725866&since=0} status=0 QTime=42
+2024-04-03 15:38:48.199 INFO  (qtp851912430-40-localhost-21) [c: s: r: x: t:localhost-21] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1712157888888} status=0 QTime=0
+2024-04-03 15:38:48.207 INFO  (qtp851912430-45-localhost-22) [c: s: r: x: t:localhost-22] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1712157888889} status=0 QTime=7
+2024-04-03 15:38:48.228 INFO  (qtp851912430-25-localhost-20) [c: s: r: x: t:localhost-20] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={wt=json&_=1712157888888} status=0 QTime=28
+2024-04-03 15:38:48.279 INFO  (qtp851912430-20-localhost-23) [c: s: r: x: t:localhost-23] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1712157888888} status=0 QTime=0
+2024-04-03 15:38:48.298 INFO  (qtp851912430-45-localhost-25) [c: s: r: x: t:localhost-25] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1712157888889} status=0 QTime=15
+2024-04-03 15:38:48.300 INFO  (qtp851912430-40-localhost-24) [c: s: r: x: t:localhost-24] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={wt=json&_=1712157888888} status=0 QTime=21
+2024-04-03 15:38:50.575 INFO  (qtp851912430-45-localhost-27) [c: s: r: x: t:localhost-27] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1712157888888} status=0 QTime=6
+2024-04-03 15:38:50.599 INFO  (qtp851912430-23-localhost-26) [c: s: r: x: t:localhost-26] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1712157888889} status=0 QTime=30
+2024-04-03 15:38:50.676 INFO  (qtp851912430-25-localhost-28) [c: s: r: x: t:localhost-28] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/threads params={wt=json&_=1712158730561} status=0 QTime=108
+2024-04-03 15:38:51.588 INFO  (qtp851912430-45-localhost-30) [c: s: r: x: t:localhost-30] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1712157888888} status=0 QTime=2
+2024-04-03 15:38:51.598 INFO  (qtp851912430-20-localhost-29) [c: s: r: x: t:localhost-29] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1712157888889} status=0 QTime=12
+2024-04-03 15:38:51.600 INFO  (qtp851912430-25-localhost-31) [c: s: r: x: t:localhost-31] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={wt=json&_=1712157888888} status=0 QTime=11
+2024-04-03 15:38:51.662 INFO  (qtp851912430-23-localhost-32) [c: s: r: x: t:localhost-32] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1712157888889} status=0 QTime=7
+2024-04-03 15:38:51.670 INFO  (qtp851912430-40-localhost-34) [c: s: r: x: t:localhost-34] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1712157888888} status=0 QTime=0
+2024-04-03 15:38:51.680 INFO  (qtp851912430-45-localhost-33) [c: s: r: x: t:localhost-33] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={wt=json&_=1712157888888} status=0 QTime=22
+2024-04-03 15:38:53.573 INFO  (qtp851912430-45-localhost-36) [c: s: r: x: t:localhost-36] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1712157888888} status=0 QTime=0
+2024-04-03 15:38:53.584 INFO  (qtp851912430-23-localhost-35) [c: s: r: x: t:localhost-35] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1712157888889} status=0 QTime=11
+2024-04-03 15:38:53.617 INFO  (qtp851912430-40-localhost-37) [c: s: r: x: t:localhost-37] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1712157888889} status=0 QTime=16
+2024-04-03 15:38:57.276 INFO  (qtp851912430-40-localhost-39) [c: s: r: x: t:localhost-39] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1712157888889} status=0 QTime=9
+2024-04-03 15:38:57.278 INFO  (qtp851912430-45-localhost-40) [c: s: r: x: t:localhost-40] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1712157888888} status=0 QTime=0
+2024-04-03 15:38:57.291 INFO  (qtp851912430-25-localhost-38) [c: s: r: x: t:localhost-38] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={wt=json&_=1712157888888} status=0 QTime=25
+2024-04-03 15:38:57.355 INFO  (qtp851912430-25-localhost-41) [c: s: r: x: t:localhost-41] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1712157888888} status=0 QTime=0
+2024-04-03 15:38:57.371 INFO  (qtp851912430-20-localhost-43) [c: s: r: x: t:localhost-43] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1712157888889} status=0 QTime=15
+2024-04-03 15:38:57.374 INFO  (qtp851912430-45-localhost-42) [c: s: r: x: t:localhost-42] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={wt=json&_=1712157888888} status=0 QTime=20
+2024-04-03 15:44:03.622 INFO  (qtp851912430-40-localhost-48) [c: s: r: x:lyricalysis t:localhost-48] o.a.s.c.S.Request webapp=/solr path=/select params={q=track_id:"2vz6HIZBaQOnWCH7kKhKQH"} hits=1 status=0 QTime=135
+2024-04-03 15:44:36.193 INFO  (qtp851912430-41-localhost-49) [c: s: r: x:lyricalysis t:localhost-49] o.a.s.c.S.Request webapp=/solr path=/select params={q=track_id:"2vz6HIZBaQOnWCH7kKhKQH"&wt=xml} hits=1 status=0 QTime=13
+2024-04-03 15:45:17.309 INFO  (qtp851912430-40-localhost-50) [c: s: r: x:lyricalysis t:localhost-50] o.a.s.c.S.Request webapp=/solr path=/select params={q=artist:"The+Weeknd"&wt=xml} hits=200 status=0 QTime=73
+2024-04-03 15:45:48.323 INFO  (qtp851912430-22-localhost-51) [c: s: r: x:lyricalysis t:localhost-51] o.a.s.c.S.Request webapp=/solr path=/select params={q=genre:"rock"&wt=xml} hits=4444 status=0 QTime=16
+2024-04-03 15:45:58.887 INFO  (qtp851912430-40-localhost-52) [c: s: r: x:lyricalysis t:localhost-52] o.a.s.c.S.Request webapp=/solr path=/select params={q=genre:"pop"&wt=xml} hits=15765 status=0 QTime=13
+2024-04-03 15:46:24.084 INFO  (qtp851912430-22-localhost-53) [c: s: r: x:lyricalysis t:localhost-53] o.a.s.c.S.Request webapp=/solr path=/select params={q=genre:"pop"&wt=xml} hits=15765 status=0 QTime=1
+2024-04-03 15:46:36.558 INFO  (qtp851912430-40-localhost-54) [c: s: r: x:lyricalysis t:localhost-54] o.a.s.c.S.Request webapp=/solr path=/select params={q=genre:"emo"&wt=xml} hits=447 status=0 QTime=14
+2024-04-03 16:12:32.446 INFO  (qtp851912430-23-localhost-56) [c: s: r: x: t:localhost-56] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1712157888888} status=0 QTime=1
+2024-04-03 16:12:32.448 INFO  (qtp851912430-22-localhost-55) [c: s: r: x: t:localhost-55] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1712158725866&since=0} status=0 QTime=6
+2024-04-03 16:12:32.463 INFO  (qtp851912430-25-localhost-57) [c: s: r: x: t:localhost-57] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1712157888889} status=0 QTime=17
+2024-04-03 16:12:36.148 INFO  (qtp851912430-22-localhost-58) [c: s: r: x: t:localhost-58] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1712157888888} status=0 QTime=1
+2024-04-03 16:12:36.170 INFO  (qtp851912430-20-localhost-59) [c: s: r: x: t:localhost-59] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1712157888889} status=0 QTime=22
+2024-04-03 16:12:36.206 INFO  (qtp851912430-22-localhost-61) [c: s: r: x:lyricalysis t:localhost-61] o.a.s.c.S.Request webapp=/solr path=/admin/ping params={action=status&wt=json&_=1712157888890&ts=1712157888890} status=503 QTime=43
+2024-04-03 16:12:36.206 INFO  (qtp851912430-40-localhost-62) [c: s: r: x:lyricalysis t:localhost-62] o.a.s.c.S.Request webapp=/solr path=/admin/system params={wt=json&_=1712160756117} status=0 QTime=41
+2024-04-03 16:12:36.206 INFO  (qtp851912430-47-localhost-60) [c: s: r: x:lyricalysis t:localhost-60] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={numTerms=0&show=index&wt=json&_=1712160756117} status=0 QTime=47
+2024-04-03 16:12:36.244 INFO  (qtp851912430-46-localhost-63) [c: s: r: x:lyricalysis t:localhost-63] o.a.s.c.S.Request webapp=/solr path=/replication params={wt=json&command=details&_=1712160756117} status=0 QTime=44
+2024-04-03 16:12:40.192 INFO  (qtp851912430-25-localhost-65) [c: s: r: x: t:localhost-65] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1712157888888} status=0 QTime=0
+2024-04-03 16:12:40.229 INFO  (qtp851912430-40-localhost-64) [c: s: r: x: t:localhost-64] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1712157888889} status=0 QTime=37
+2024-04-03 16:12:40.251 INFO  (qtp851912430-20-localhost-66) [c: s: r: x:lyricalysis t:localhost-66] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1712160756117} status=0 QTime=58
+2024-04-03 16:12:41.177 INFO  (qtp851912430-40-localhost-68) [c: s: r: x: t:localhost-68] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1712157888888} status=0 QTime=1
+2024-04-03 16:12:41.192 INFO  (qtp851912430-23-localhost-69) [c: s: r: x:lyricalysis t:localhost-69] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1712160756117} status=0 QTime=14
+2024-04-03 16:12:41.192 INFO  (qtp851912430-41-localhost-67) [c: s: r: x: t:localhost-67] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1712157888889} status=0 QTime=16
+2024-04-03 16:12:50.401 INFO  (qtp851912430-47-localhost-72) [c: s: r: x: t:localhost-72] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1712157888888} status=0 QTime=0
+2024-04-03 16:12:50.402 INFO  (qtp851912430-25-localhost-71) [c: s: r: x:lyricalysis t:localhost-71] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1712160756117} status=0 QTime=4
+2024-04-03 16:12:50.418 INFO  (qtp851912430-22-localhost-70) [c: s: r: x: t:localhost-70] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1712157888889} status=0 QTime=20
+2024-04-03 16:12:50.451 INFO  (qtp851912430-40-localhost-73) [c: s: r: x:lyricalysis t:localhost-73] o.a.s.c.PluginBag Going to create a new requestHandler with {type = requestHandler,name = /analysis/field,class = solr.FieldAnalysisRequestHandler,attributes = {class=solr.FieldAnalysisRequestHandler, startup=lazy, useParams=_ANALYSIS_FIELD, name=/analysis/field},args = {startup=lazy, useParams=_ANALYSIS_FIELD}} 
+2024-04-03 16:12:50.484 ERROR (qtp851912430-40-localhost-73) [c: s: r: x:lyricalysis t:localhost-73] o.a.s.h.RequestHandlerBase Client exception => org.apache.solr.common.SolrException: One of analysis.fieldvalue, q, or analysis.query parameters must be specified
+	at org.apache.solr.handler.FieldAnalysisRequestHandler.resolveAnalysisRequest(FieldAnalysisRequestHandler.java:146)
+org.apache.solr.common.SolrException: One of analysis.fieldvalue, q, or analysis.query parameters must be specified
+	at org.apache.solr.handler.FieldAnalysisRequestHandler.resolveAnalysisRequest(FieldAnalysisRequestHandler.java:146) ~[?:?]
+	at org.apache.solr.handler.FieldAnalysisRequestHandler.doAnalysis(FieldAnalysisRequestHandler.java:101) ~[?:?]
+	at org.apache.solr.handler.AnalysisRequestHandlerBase.handleRequestBody(AnalysisRequestHandlerBase.java:70) ~[?:?]
+	at org.apache.solr.handler.RequestHandlerBase.handleRequest(RequestHandlerBase.java:226) ~[?:?]
+	at org.apache.solr.core.SolrCore.execute(SolrCore.java:2884) ~[?:?]
+	at org.apache.solr.servlet.HttpSolrCall.executeCoreRequest(HttpSolrCall.java:875) ~[?:?]
+	at org.apache.solr.servlet.HttpSolrCall.call(HttpSolrCall.java:561) ~[?:?]
+	at org.apache.solr.servlet.SolrDispatchFilter.dispatch(SolrDispatchFilter.java:262) ~[?:?]
+	at org.apache.solr.servlet.SolrDispatchFilter.lambda$doFilter$0(SolrDispatchFilter.java:219) ~[?:?]
+	at org.apache.solr.servlet.ServletUtils.traceHttpRequestExecution2(ServletUtils.java:249) ~[?:?]
+	at org.apache.solr.servlet.ServletUtils.rateLimitRequest(ServletUtils.java:215) ~[?:?]
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:213) ~[?:?]
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:195) ~[?:?]
+	at org.eclipse.jetty.servlet.FilterHolder.doFilter(FilterHolder.java:210) ~[jetty-servlet-10.0.19.jar:10.0.19]
+	at org.eclipse.jetty.servlet.ServletHandler$Chain.doFilter(ServletHandler.java:1635) ~[jetty-servlet-10.0.19.jar:10.0.19]
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:527) ~[jetty-servlet-10.0.19.jar:10.0.19]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:131) ~[jetty-server-10.0.19.jar:10.0.19]
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:598) ~[jetty-security-10.0.19.jar:10.0.19]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:122) ~[jetty-server-10.0.19.jar:10.0.19]
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:223) ~[jetty-server-10.0.19.jar:10.0.19]
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1580) ~[jetty-server-10.0.19.jar:10.0.19]
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221) ~[jetty-server-10.0.19.jar:10.0.19]
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1384) ~[jetty-server-10.0.19.jar:10.0.19]
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:176) ~[jetty-server-10.0.19.jar:10.0.19]
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:484) ~[jetty-servlet-10.0.19.jar:10.0.19]
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1553) ~[jetty-server-10.0.19.jar:10.0.19]
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:174) ~[jetty-server-10.0.19.jar:10.0.19]
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1306) ~[jetty-server-10.0.19.jar:10.0.19]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:129) ~[jetty-server-10.0.19.jar:10.0.19]
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:149) ~[jetty-server-10.0.19.jar:10.0.19]
+	at org.eclipse.jetty.server.handler.InetAccessHandler.handle(InetAccessHandler.java:228) ~[jetty-server-10.0.19.jar:10.0.19]
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:141) ~[jetty-server-10.0.19.jar:10.0.19]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:122) ~[jetty-server-10.0.19.jar:10.0.19]
+	at org.eclipse.jetty.rewrite.handler.RewriteHandler.handle(RewriteHandler.java:301) ~[jetty-rewrite-10.0.19.jar:10.0.19]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:122) ~[jetty-server-10.0.19.jar:10.0.19]
+	at org.eclipse.jetty.server.handler.gzip.GzipHandler.handle(GzipHandler.java:822) ~[jetty-server-10.0.19.jar:10.0.19]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:122) ~[jetty-server-10.0.19.jar:10.0.19]
+	at org.eclipse.jetty.server.Server.handle(Server.java:563) ~[jetty-server-10.0.19.jar:10.0.19]
+	at org.eclipse.jetty.server.HttpChannel$RequestDispatchable.dispatch(HttpChannel.java:1598) ~[jetty-server-10.0.19.jar:10.0.19]
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:753) ~[jetty-server-10.0.19.jar:10.0.19]
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:501) ~[jetty-server-10.0.19.jar:10.0.19]
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:287) ~[jetty-server-10.0.19.jar:10.0.19]
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:314) ~[jetty-io-10.0.19.jar:10.0.19]
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:100) ~[jetty-io-10.0.19.jar:10.0.19]
+	at org.eclipse.jetty.io.SelectableChannelEndPoint$1.run(SelectableChannelEndPoint.java:53) ~[jetty-io-10.0.19.jar:10.0.19]
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.runTask(AdaptiveExecutionStrategy.java:421) ~[jetty-util-10.0.19.jar:10.0.19]
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.consumeTask(AdaptiveExecutionStrategy.java:390) ~[jetty-util-10.0.19.jar:10.0.19]
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.tryProduce(AdaptiveExecutionStrategy.java:277) ~[jetty-util-10.0.19.jar:10.0.19]
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.run(AdaptiveExecutionStrategy.java:199) ~[jetty-util-10.0.19.jar:10.0.19]
+	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:411) ~[jetty-util-10.0.19.jar:10.0.19]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:969) ~[jetty-util-10.0.19.jar:10.0.19]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.doRunJob(QueuedThreadPool.java:1194) ~[jetty-util-10.0.19.jar:10.0.19]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1149) ~[jetty-util-10.0.19.jar:10.0.19]
+	at java.base/java.lang.Thread.run(Thread.java:833) [?:?]
+2024-04-03 16:12:50.484 INFO  (qtp851912430-40-localhost-73) [c: s: r: x:lyricalysis t:localhost-73] o.a.s.c.S.Request webapp=/solr path=/analysis/field params={analysis.fieldname=genre&analysis.showmatch=true&verbose_output=1&wt=json&_=1712160761163} status=400 QTime=33
+2024-04-03 16:12:59.811 INFO  (qtp851912430-40-localhost-74) [c: s: r: x: t:localhost-74] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1712157888889} status=0 QTime=33
+2024-04-03 16:12:59.822 INFO  (qtp851912430-23-localhost-76) [c: s: r: x:lyricalysis t:localhost-76] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1712160756117} status=0 QTime=16
+2024-04-03 16:12:59.841 INFO  (qtp851912430-41-localhost-77) [c: s: r: x: t:localhost-77] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1712157888888} status=0 QTime=0
+2024-04-03 16:12:59.858 INFO  (qtp851912430-22-localhost-75) [c: s: r: x:lyricalysis t:localhost-75] o.a.s.c.S.Request webapp=/solr path=/config params={wt=json&_=1712160779734} status=0 QTime=57
+2024-04-03 16:12:59.950 INFO  (qtp851912430-23-localhost-78) [c: s: r: x:lyricalysis t:localhost-78] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={numTerms=0&wt=json&_=1712160756117} status=0 QTime=50
+2024-04-03 16:13:03.384 INFO  (qtp851912430-47-localhost-80) [c: s: r: x: t:localhost-80] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1712157888888} status=0 QTime=0
+2024-04-03 16:13:03.387 INFO  (qtp851912430-25-localhost-79) [c: s: r: x:lyricalysis t:localhost-79] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1712160756117} status=0 QTime=3
+2024-04-03 16:13:03.387 INFO  (qtp851912430-20-localhost-82) [c: s: r: x:lyricalysis t:localhost-82] o.a.s.c.S.Request webapp=/solr path=/config params={wt=json&_=1712160779734} status=0 QTime=0
+2024-04-03 16:13:03.389 INFO  (qtp851912430-50-localhost-81) [c: s: r: x: t:localhost-81] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1712157888889} status=0 QTime=4
+2024-04-03 16:13:03.465 INFO  (qtp851912430-50-localhost-83) [c: s: r: x:lyricalysis t:localhost-83] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={numTerms=0&wt=json&_=1712160756117} status=0 QTime=11
+2024-04-03 16:13:08.644 INFO  (qtp851912430-51-localhost-84) [c: s: r: x: t:localhost-84] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1712157888888} status=0 QTime=0
+2024-04-03 16:13:08.675 INFO  (qtp851912430-40-localhost-86) [c: s: r: x: t:localhost-86] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1712157888889} status=0 QTime=28
+2024-04-03 16:13:08.688 INFO  (qtp851912430-51-localhost-87) [c: s: r: x:lyricalysis t:localhost-87] o.a.s.c.S.Request webapp=/solr path=/config params={wt=json&_=1712160779734} status=0 QTime=0
+2024-04-03 16:13:08.689 INFO  (qtp851912430-50-localhost-85) [c: s: r: x:lyricalysis t:localhost-85] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1712160756117} status=0 QTime=45
+2024-04-03 16:13:08.736 INFO  (qtp851912430-46-localhost-88) [c: s: r: x:lyricalysis t:localhost-88] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={numTerms=0&wt=json&_=1712160756117} status=0 QTime=10
+2024-04-03 16:13:11.581 INFO  (qtp851912430-46-localhost-90) [c: s: r: x:lyricalysis t:localhost-90] o.a.s.c.S.Request webapp=/solr path=/config params={wt=json&_=1712160779734} status=0 QTime=0
+2024-04-03 16:13:11.583 INFO  (qtp851912430-47-localhost-89) [c: s: r: x:lyricalysis t:localhost-89] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1712160756117} status=0 QTime=2
+2024-04-03 16:13:11.594 INFO  (qtp851912430-50-localhost-91) [c: s: r: x: t:localhost-91] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1712157888888} status=0 QTime=2
+2024-04-03 16:13:11.628 INFO  (qtp851912430-50-localhost-92) [c: s: r: x: t:localhost-92] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1712157888889} status=0 QTime=19
+2024-04-03 16:13:11.657 INFO  (qtp851912430-40-localhost-93) [c: s: r: x:lyricalysis t:localhost-93] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={numTerms=0&wt=json&_=1712160756117} status=0 QTime=8
+2024-04-03 16:13:14.476 INFO  (qtp851912430-47-localhost-95) [c: s: r: x: t:localhost-95] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1712157888888} status=0 QTime=1
+2024-04-03 16:13:14.476 INFO  (qtp851912430-51-localhost-94) [c: s: r: x:lyricalysis t:localhost-94] o.a.s.c.S.Request webapp=/solr path=/config params={wt=json&_=1712160779734} status=0 QTime=1
+2024-04-03 16:13:14.483 INFO  (qtp851912430-50-localhost-96) [c: s: r: x:lyricalysis t:localhost-96] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1712160756117} status=0 QTime=3
+2024-04-03 16:13:14.517 INFO  (qtp851912430-46-localhost-97) [c: s: r: x: t:localhost-97] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1712157888889} status=0 QTime=7
+2024-04-03 16:13:14.555 INFO  (qtp851912430-46-localhost-98) [c: s: r: x:lyricalysis t:localhost-98] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={numTerms=0&wt=json&_=1712160756117} status=0 QTime=15
+2024-04-03 16:13:16.999 INFO  (qtp851912430-50-localhost-99) [c: s: r: x: t:localhost-99] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1712157888888} status=0 QTime=0
+2024-04-03 16:13:17.016 INFO  (qtp851912430-40-localhost-100) [c: s: r: x:lyricalysis t:localhost-100] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1712160756117} status=0 QTime=15
+2024-04-03 16:13:17.020 INFO  (qtp851912430-20-localhost-101) [c: s: r: x: t:localhost-101] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1712157888889} status=0 QTime=5
+2024-04-03 16:13:22.830 INFO  (qtp851912430-40-localhost-104) [c: s: r: x: t:localhost-104] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1712157888888} status=0 QTime=1
+2024-04-03 16:13:22.845 INFO  (qtp851912430-51-localhost-103) [c: s: r: x:lyricalysis t:localhost-103] o.a.s.c.S.Request webapp=/solr path=/admin/file params={wt=json&_=1712160802808} status=0 QTime=16
+2024-04-03 16:13:22.845 INFO  (qtp851912430-50-localhost-102) [c: s: r: x: t:localhost-102] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1712157888889} status=0 QTime=17
+2024-04-03 16:13:22.892 INFO  (qtp851912430-41-localhost-105) [c: s: r: x:lyricalysis t:localhost-105] o.a.s.c.S.Request webapp=/solr path=/admin/file params={file=lang&wt=json&_=1712160802808} status=0 QTime=28
+2024-04-03 16:13:33.002 INFO  (qtp851912430-40-localhost-106) [c: s: r: x: t:localhost-106] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1712157888889} status=0 QTime=11
+2024-04-03 16:13:33.008 INFO  (qtp851912430-50-localhost-109) [c: s: r: x: t:localhost-109] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1712157888888} status=0 QTime=1
+2024-04-03 16:13:33.018 INFO  (qtp851912430-41-localhost-107) [c: s: r: x:lyricalysis t:localhost-107] o.a.s.c.S.Request webapp=/solr path=/admin/file params={wt=json&_=1712160802808} status=0 QTime=20
+2024-04-03 16:13:33.018 INFO  (qtp851912430-51-localhost-108) [c: s: r: x:lyricalysis t:localhost-108] o.a.s.c.S.Request webapp=/solr path=/admin/file params={file=lang/stopwords_en.txt&contentType=text/plain;charset%3Dutf-8&wt=json&_=1712160802808} status=0 QTime=2
+2024-04-03 16:13:33.058 INFO  (qtp851912430-50-localhost-110) [c: s: r: x:lyricalysis t:localhost-110] o.a.s.c.S.Request webapp=/solr path=/admin/file params={file=lang&wt=json&_=1712160802808} status=0 QTime=18
+2024-04-03 16:14:30.192 INFO  (qtp851912430-45-localhost-111) [c: s: r: x: t:localhost-111] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1712157888888} status=0 QTime=2
+2024-04-03 16:14:30.194 INFO  (qtp851912430-41-localhost-113) [c: s: r: x:lyricalysis t:localhost-113] o.a.s.c.S.Request webapp=/solr path=/config/params params={wt=json&_=1712160870160} status=0 QTime=0
+2024-04-03 16:14:30.201 INFO  (qtp851912430-50-localhost-112) [c: s: r: x: t:localhost-112] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1712157888889} status=0 QTime=7
+2024-04-03 16:14:33.435 INFO  (qtp851912430-22-localhost-114) [c: s: r: x: t:localhost-114] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1712157888888} status=0 QTime=0
+2024-04-03 16:14:33.446 INFO  (qtp851912430-45-localhost-115) [c: s: r: x: t:localhost-115] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1712157888889} status=0 QTime=11
+2024-04-03 16:14:33.488 INFO  (qtp851912430-50-localhost-116) [c: s: r: x:lyricalysis t:localhost-116] o.a.s.c.S.Request webapp=/solr path=/admin/segments params={wt=json&_=1712160873422} status=0 QTime=46
+2024-04-03 16:14:38.895 INFO  (qtp851912430-50-localhost-117) [c: s: r: x: t:localhost-117] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1712157888889} status=0 QTime=8
+2024-04-03 16:14:38.900 INFO  (qtp851912430-46-localhost-119) [c: s: r: x: t:localhost-119] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1712157888888} status=0 QTime=0
+2024-04-03 16:14:38.925 INFO  (qtp851912430-22-localhost-118) [c: s: r: x:lyricalysis t:localhost-118] o.a.s.c.S.Request webapp=/solr path=/replication params={wt=json&command=details&_=1712160756117} status=0 QTime=36
+2024-04-03 16:14:40.346 INFO  (qtp851912430-41-localhost-120) [c: s: r: x: t:localhost-120] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1712157888888} status=0 QTime=0
+2024-04-03 16:14:40.348 INFO  (qtp851912430-47-localhost-121) [c: s: r: x: t:localhost-121] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1712157888889} status=0 QTime=2
+2024-04-03 16:14:40.352 INFO  (qtp851912430-40-localhost-122) [c: s: r: x:lyricalysis t:localhost-122] o.a.s.c.S.Request webapp=/solr path=/config/params params={wt=json&_=1712160870160} status=0 QTime=0
+2024-04-03 16:14:41.085 INFO  (qtp851912430-50-localhost-125) [c: s: r: x: t:localhost-125] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1712157888888} status=0 QTime=0
+2024-04-03 16:14:41.112 INFO  (qtp851912430-40-localhost-124) [c: s: r: x: t:localhost-124] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1712157888889} status=0 QTime=42
+2024-04-03 16:14:41.163 INFO  (qtp851912430-41-localhost-123) [c: s: r: x:lyricalysis t:localhost-123] o.a.s.c.S.Request webapp=/solr path=/admin/mbeans params={stats=true&wt=json&_=1712160881045} status=0 QTime=97
+2024-04-03 16:14:43.240 INFO  (qtp851912430-23-localhost-126) [c: s: r: x: t:localhost-126] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1712157888888} status=0 QTime=0
+2024-04-03 16:14:43.256 INFO  (qtp851912430-25-localhost-127) [c: s: r: x:lyricalysis t:localhost-127] o.a.s.c.S.Request webapp=/solr path=/admin/file params={wt=json&_=1712160802808} status=0 QTime=16
+2024-04-03 16:14:43.286 INFO  (qtp851912430-40-localhost-128) [c: s: r: x: t:localhost-128] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1712157888889} status=0 QTime=24
+2024-04-03 16:14:43.298 INFO  (qtp851912430-23-localhost-129) [c: s: r: x:lyricalysis t:localhost-129] o.a.s.c.S.Request webapp=/solr path=/admin/file params={file=lang&wt=json&_=1712160802808} status=0 QTime=13
+2024-04-03 16:14:45.636 INFO  (qtp851912430-23-localhost-131) [c: s: r: x: t:localhost-131] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1712157888888} status=0 QTime=0
+2024-04-03 16:14:45.637 INFO  (qtp851912430-25-localhost-132) [c: s: r: x:lyricalysis t:localhost-132] o.a.s.c.S.Request webapp=/solr path=/config/params params={wt=json&_=1712160870160} status=0 QTime=0
+2024-04-03 16:14:45.680 INFO  (qtp851912430-47-localhost-130) [c: s: r: x: t:localhost-130] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1712157888889} status=0 QTime=44
+2024-04-03 16:14:46.905 INFO  (qtp851912430-40-localhost-133) [c: s: r: x: t:localhost-133] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1712157888888} status=0 QTime=0
+2024-04-03 16:14:46.920 INFO  (qtp851912430-25-localhost-134) [c: s: r: x:lyricalysis t:localhost-134] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1712160756117} status=0 QTime=14
+2024-04-03 16:14:46.924 INFO  (qtp851912430-20-localhost-135) [c: s: r: x: t:localhost-135] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1712157888889} status=0 QTime=6
+2024-04-03 16:14:50.242 INFO  (qtp851912430-23-localhost-136) [c: s: r: x: t:localhost-136] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1712157888888} status=0 QTime=0
+2024-04-03 16:14:50.256 INFO  (qtp851912430-47-localhost-137) [c: s: r: x:lyricalysis t:localhost-137] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1712160756117} status=0 QTime=14
+2024-04-03 16:14:50.270 INFO  (qtp851912430-25-localhost-138) [c: s: r: x: t:localhost-138] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1712157888889} status=0 QTime=26
+2024-04-03 16:14:51.387 INFO  (qtp851912430-25-localhost-141) [c: s: r: x:lyricalysis t:localhost-141] o.a.s.c.S.Request webapp=/solr path=/admin/ping params={action=status&wt=json&_=1712157888890&ts=1712157888890} status=503 QTime=0
+2024-04-03 16:14:51.389 INFO  (qtp851912430-20-localhost-139) [c: s: r: x:lyricalysis t:localhost-139] o.a.s.c.S.Request webapp=/solr path=/admin/system params={wt=json&_=1712160756117} status=0 QTime=3
+2024-04-03 16:14:51.404 INFO  (qtp851912430-41-localhost-143) [c: s: r: x: t:localhost-143] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1712157888888} status=0 QTime=0
+2024-04-03 16:14:51.423 INFO  (qtp851912430-20-localhost-144) [c: s: r: x: t:localhost-144] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1712157888889} status=0 QTime=5
+2024-04-03 16:14:51.432 INFO  (qtp851912430-23-localhost-140) [c: s: r: x:lyricalysis t:localhost-140] o.a.s.c.S.Request webapp=/solr path=/replication params={wt=json&command=details&_=1712160756117} status=0 QTime=47
+2024-04-03 16:14:51.433 INFO  (qtp851912430-47-localhost-142) [c: s: r: x:lyricalysis t:localhost-142] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={numTerms=0&show=index&wt=json&_=1712160756117} status=0 QTime=46
+2024-04-03 16:23:43.163 INFO  (qtp851912430-25-localhost-146) [c: s: r: x: t:localhost-146] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1712157888888} status=0 QTime=9
+2024-04-03 16:23:43.169 INFO  (qtp851912430-20-localhost-145) [c: s: r: x:lyricalysis t:localhost-145] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1712160756117} status=0 QTime=16
+2024-04-03 16:23:43.207 INFO  (qtp851912430-52-localhost-147) [c: s: r: x: t:localhost-147] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1712157888889} status=0 QTime=54
+2024-04-03 16:23:46.616 INFO  (qtp851912430-55-localhost-149) [c: s: r: x: t:localhost-149] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1712157888888} status=0 QTime=0
+2024-04-03 16:23:46.621 INFO  (qtp851912430-53-localhost-150) [c: s: r: x: t:localhost-150] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/properties params={wt=json&_=1712161426602} status=0 QTime=5
+2024-04-03 16:23:46.643 INFO  (qtp851912430-50-localhost-148) [c: s: r: x: t:localhost-148] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1712157888889} status=0 QTime=27
+2024-04-03 16:23:49.388 INFO  (qtp851912430-40-localhost-151) [c: s: r: x: t:localhost-151] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1712157888888} status=0 QTime=0
+2024-04-03 16:23:49.411 INFO  (qtp851912430-23-localhost-152) [c: s: r: x: t:localhost-152] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1712157888889} status=0 QTime=23
+2024-04-03 16:23:49.420 INFO  (qtp851912430-53-localhost-153) [c: s: r: x: t:localhost-153] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={wt=json&_=1712157888888} status=0 QTime=17
+2024-04-03 16:23:49.467 INFO  (qtp851912430-53-localhost-156) [c: s: r: x: t:localhost-156] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1712157888888} status=0 QTime=0
+2024-04-03 16:23:49.476 INFO  (qtp851912430-50-localhost-154) [c: s: r: x: t:localhost-154] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1712157888889} status=0 QTime=9
+2024-04-03 16:23:49.487 INFO  (qtp851912430-40-localhost-155) [c: s: r: x: t:localhost-155] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={wt=json&_=1712157888888} status=0 QTime=20
+2024-04-03 16:23:52.520 INFO  (qtp851912430-40-localhost-158) [c: s: r: x: t:localhost-158] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1712157888888} status=0 QTime=0
+2024-04-03 16:23:52.522 INFO  (qtp851912430-55-localhost-157) [c: s: r: x: t:localhost-157] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1712157888889} status=0 QTime=4
+2024-04-03 16:23:52.541 INFO  (qtp851912430-22-localhost-159) [c: s: r: x: t:localhost-159] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1712157888889} status=0 QTime=4
+2024-04-03 16:23:52.620 INFO  (qtp851912430-40-localhost-160) [c: s: r: x: t:localhost-160] o.a.s.s.HttpSolrCall [admin] webapp=null path=/cluster/security/authorization params={wt=json&_=1712161432450} status=0 QTime=19
+2024-04-03 16:23:53.748 INFO  (qtp851912430-57-localhost-161) [c: s: r: x: t:localhost-161] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1712157888888} status=0 QTime=0
+2024-04-03 16:23:53.754 INFO  (qtp851912430-53-localhost-162) [c: s: r: x: t:localhost-162] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1712158725866&since=0} status=0 QTime=2
+2024-04-03 16:23:53.777 INFO  (qtp851912430-22-localhost-163) [c: s: r: x: t:localhost-163] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1712157888889} status=0 QTime=25
+2024-04-03 16:24:05.591 INFO  (qtp851912430-51-localhost-164) [c: s: r: x: t:localhost-164] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1712158725866&since=0} status=0 QTime=2
+2024-04-03 16:24:23.011 INFO  (qtp851912430-22-localhost-165) [c: s: r: x: t:localhost-165] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1712158725866&since=0} status=0 QTime=0
+2024-04-03 16:24:35.242 INFO  (qtp851912430-51-localhost-166) [c: s: r: x: t:localhost-166] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1712158725866&since=0} status=0 QTime=0
+2024-04-03 16:24:45.412 INFO  (qtp851912430-22-localhost-167) [c: s: r: x: t:localhost-167] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=javabin&version=2} status=0 QTime=2
+2024-04-03 16:24:45.665 INFO  (qtp851912430-22-localhost-168) [c: s: r: x: t:localhost-168] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1712158725866&since=0} status=0 QTime=0
+2024-04-03 16:24:55.776 INFO  (qtp851912430-51-localhost-169) [c: s: r: x: t:localhost-169] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1712158725866&since=0} status=0 QTime=0
+2024-04-03 16:25:05.886 INFO  (qtp851912430-22-localhost-170) [c: s: r: x: t:localhost-170] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1712158725866&since=0} status=0 QTime=0
+2024-04-03 16:25:55.400 INFO  (qtp851912430-51-localhost-171) [c: s: r: x: t:localhost-171] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1712158725866&since=0} status=0 QTime=1
+2024-04-03 16:26:02.659 INFO  (ShutdownMonitor) [c: s: r: x: t:] o.e.j.s.Server Stopped Server@2364305a{STOPPING}[10.0.19,sto=0]
+2024-04-03 16:26:02.678 INFO  (ShutdownMonitor) [c: s: r: x: t:] o.e.j.s.AbstractConnector Stopped ServerConnector@192d74fb{HTTP/1.1, (http/1.1, h2c)}{127.0.0.1:8983}
+2024-04-03 16:26:02.712 INFO  (ShutdownMonitor) [c: s: r: x: t:] o.a.s.c.CoreContainer Shutting down CoreContainer instance=580965610
+2024-04-03 16:26:02.719 INFO  (coreCloseExecutor-19-thread-1) [c: s: r: x:lyricalysis t:] o.a.s.c.SolrCore CLOSING SolrCore org.apache.solr.core.SolrCore@6ecb1b37 lyricalysis
+2024-04-03 16:26:02.721 INFO  (coreCloseExecutor-19-thread-1) [c: s: r: x:lyricalysis t:] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.core.lyricalysis tag=SolrCore@6ecb1b37
+2024-04-03 16:26:02.794 INFO  (coreCloseExecutor-19-thread-1) [c: s: r: x:lyricalysis t:] o.a.s.u.DirectUpdateHandler2 Committing on IndexWriter.close()  ... SKIPPED (unnecessary).
+2024-04-03 16:26:02.831 INFO  (ShutdownMonitor) [c: s: r: x: t:] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.node tag=null
+2024-04-03 16:26:02.850 INFO  (ShutdownMonitor) [c: s: r: x: t:] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.jvm tag=null
+2024-04-03 16:26:02.861 INFO  (ShutdownMonitor) [c: s: r: x: t:] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.jetty tag=null
+2024-04-03 16:26:02.881 INFO  (ShutdownMonitor) [c: s: r: x: t:] o.e.j.s.h.ContextHandler Stopped o.e.j.w.WebAppContext@62d363ab{solr-jetty-context.xml,/solr,file:///Users/copseatingdonuts/solr-9.5.0/server/solr-webapp/webapp/,STOPPED}{/Users/copseatingdonuts/solr-9.5.0/server/solr-webapp/webapp}
