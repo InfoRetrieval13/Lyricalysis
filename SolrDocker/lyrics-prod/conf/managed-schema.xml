@@ -269,6 +269,7 @@
     <analyzer type="query">
       <tokenizer name="standard"/>
       <filter name="stop" ignoreCase="true" words="stopwords.txt"/>
+      <filter class="solr.StopFilterFactory" words="stopwords.txt"/>
       <filter expand="true" ignoreCase="true" synonyms="synonyms.txt" name="synonymGraph"/>
       <filter name="lowercase"/>
     </analyzer>
@@ -277,11 +278,13 @@
     <analyzer type="index">
       <tokenizer name="standard"/>
       <filter name="stop" ignoreCase="true" words="stopwords.txt"/>
+      <filter class="solr.StopFilterFactory" words="stopwords.txt"/>
       <filter name="lowercase"/>
     </analyzer>
     <analyzer type="query">
       <tokenizer name="standard"/>
       <filter name="stop" ignoreCase="true" words="stopwords.txt"/>
+      <filter class="solr.StopFilterFactory" words="stopwords.txt"/>
       <filter expand="true" ignoreCase="true" synonyms="synonyms.txt" name="synonymGraph"/>
       <filter name="lowercase"/>
     </analyzer>
@@ -290,6 +293,7 @@
     <analyzer type="index">
       <tokenizer name="standard"/>
       <filter name="stop" ignoreCase="true" words="stopwords.txt"/>
+      <filter class="solr.StopFilterFactory" words="stopwords.txt"/>
       <filter name="lowercase"/>
       <filter maxPosAsterisk="3" maxFractionAsterisk="0.33" name="reversedWildcard" maxPosQuestion="2" withOriginal="true"/>
     </analyzer>
@@ -297,6 +301,7 @@
       <tokenizer name="standard"/>
       <filter expand="true" ignoreCase="true" synonyms="synonyms.txt" name="synonymGraph"/>
       <filter name="stop" ignoreCase="true" words="stopwords.txt"/>
+      <filter class="solr.StopFilterFactory" words="stopwords.txt"/>
       <filter name="lowercase"/>
     </analyzer>
   </fieldType>

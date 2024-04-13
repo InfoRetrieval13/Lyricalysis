@@ -115,6 +115,7 @@ def query_parser():
 
         full_query += string_field_query
         
+    print("querying:", full_query)
     # endpoint = f"http://localhost:8983/solr/mycore/select?q={full_query}"
     endpoint = f"http://solr:8983/solr/mycore/select?q={full_query}"
     response = httpx.get(endpoint)
