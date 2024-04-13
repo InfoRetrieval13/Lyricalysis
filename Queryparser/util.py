@@ -77,7 +77,8 @@ def translator(field_query):
 		elif data == 'no': data = 'false'
 		elif data == 'only': data = 'true'
 
-		string = 'AND ' + field + ':' + data
+		string = ' AND (' + field + ':' + data + ')'
+		return string
 
 	string = string.strip()
 	string = '(' + string + ')'

@@ -134,11 +134,11 @@
 
                     <div @click="addGenres">Add Genres Field</div>
 
-                    <div @click="addEmotions">Add Emotions Field</div>
-
                     <div @click="addDate">Add Date Field</div>
 
                     <div @click="addDuration">Add Duration Field</div>
+
+                    <div @click="addEmotions">Add Emotions Field</div>
 
                     <div @click="addIntensity">Add Intensity Field</div>
                 </div>
@@ -165,7 +165,10 @@
                 <button @click="searchFor">Search</button>
             </div>
         </div>
-        <div class="bg-dredy shadow-lg rounded-md result-section w-[95vw] flex flex-col items-center justify-center gap-2 p-2">
+        <div class="bg-dredy shadow-lg rounded-md result-section w-[95vw] flex flex-col items-center justify-center gap-2 p-2 relative">
+            <div class="absolute -top-7 right-2 text-whitey">
+                {{ searchTime }}
+            </div>
             <div
                 v-for="result in results"
                 class="result-item flex items-center justify-between song-info p-4 rounded-md shadow-md w-full">
@@ -231,13 +234,14 @@
                         width="100%"
                         height="152"
                         frameBorder="0"
-                        allowfullscreen=""
-                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                        loading="lazy"></iframe>
+                        allowfullscreen=""></iframe>
                 </div>
             </div>
         </div>
     </div>
+    <Loading
+        v-if="isLoading"
+        :text="loadingText" />
 </template>
 
 <script>
@@ -247,10 +251,13 @@
     import DateSelector from "./components/DateSelector.vue";
     import DurationSelector from "./components/DurationSelector.vue";
     import IntensitySelector from "./components/IntensitySelector.vue";
+    import Loading from "./components/Loading.vue";
     export default {
         name: "App",
         data() {
             return {
+                isLoading: false,
+                loadingText: "Searching...",
                 search: [],
                 v1: false,
                 results: [
@@ -278,103 +285,8 @@
                         id: "7735dcc6-1ceb-4ade-a8e2-1dce6bb77548",
                         _version_: 1795847323357544448,
                     },
-                    {
-                        track: ["Ordinary Life"],
-                        album: ["Starboy (Deluxe)"],
-                        track_id: ["09mBPwUMt1TXNtneqvmZZ5"],
-                        lyrics: [
-                            "Heaven in her mouth, got a hell of a tongue I can feel her teeth when I drive on a bump Fingers letting go of the wheel when I cum Wheel when I cum, wheel when I cum David Carradine, I'ma die when I cum She just givin' head, she don't know what I've done Like I'm James Dean, I'ma die when I'm young Die when I'm young, die when I'm young Heaven knows that I've been told Paid for the life that I chose If I could, I'd trade it all Trade it for a halo And she said that she'll pray for me I said, \"It's too late for me\" 'Cause I think it's safe to say This ain't ordinary life This ain't ordinary life This ain't ordinary life This ain't ordinary life No ordinary life This ain't ordinary life This ain't ordinary life This ain't ordinary life Valhalla is where all the righteous are led Mulholland's where all the damned will be kept Devil on my lap and a cross on my neck Cross on my neck, cross on my neck Over 45, I'ma drift on a bend Do a buck 20, I'ma fly off the edge Everybody said it would hurt in the end Hurt in the end, but I feel nothin' She said that she'll pray for me I said, \"It's too late for me\" 'Cause I think it's safe to say This ain't ordinary life This ain't ordinary life This ain't ordinary life This ain't ordinary life No ordinary life This ain't ordinary life This ain't ordinary life This ain't ordinary life ♪ Angels all singin' in monasteries, yeah My soul is burning in LaFerraris Father, sorry, father, sorry Halos are given to ordinary lives No, but this ain't ordinary life This ain't ordinary life This ain't ordinary life This ain't ordinary life No ordinary life This ain't ordinary life This ain't ordinary life This ain't ordinary life No ordinary life Woah-oh-oh Woah-oh-oh ",
-                        ],
-                        emotion: ["optimism"],
-                        intensity: ["medium"],
-                        id: "e5a5e167-55ef-4f3b-af4d-de61d8fb5f84",
-                        _version_: 1795847323362787328,
-                    },
-                    {
-                        track: ["Take My Breath - Live"],
-                        album: ["Live At SoFi Stadium"],
-                        track_id: ["02YlAvsmptN8LisZqrWBIb"],
-                        lyrics: [
-                            "Oh, take my breath Ooh, yeah Oh, I see you One, two, three Take my breath ♪ Oh, one, two, three Take my breath ♪ Oh, take my breath Ooh, ooh, ooh, ooh Said I saw the fire in your eyes I saw the fire when I look into your eyes You tell me things you wanna try I know temptation is the devil in disguise You risk it all to feel alive, ooh, yeah (You're offering yourself to me like sacrifice) You said you do this all the time Tell me you love me when I bring you to the light So, I say It's like a dream what she feels with me She likes to be on the edge Her fantasy is okay with me Then suddenly, baby says Said Take my breath away And make it last forever, babe Do it now or never, baby Take my breath away Nobody does it better, babe Bring me close to heaven, baby Take my breath ♪ Come on ♪ Oh, oh-oh Oh, oh Take my, take my breath away Nobody does it better, babe Do it now or never, baby, say Take my breath away Nobody does it better, babe Bring me close to heaven, baby Take my breath away, na-na-ooh-ooh Take my breath, yeah Nobody does it better, babe Bring me close to heaven, baby (Take my breath) ",
-                        ],
-                        emotion: ["ecstasy"],
-                        intensity: ["high"],
-                        id: "8605b4af-f380-4d85-ab5a-39affc9ef252",
-                        _version_: 1795847323364884480,
-                    },
-                    {
-                        track: ["Party Monster - Live"],
-                        album: ["Live At SoFi Stadium"],
-                        track_id: ["6knNhL3mIaackJvtjmUrfN"],
-                        lyrics: [
-                            "Los Angeles are you tryna go hard tonight? Let's go ♪ I see, I see, I see I'm good, I'm good, I'm great Know it's been a while, now I'm mixin' up the drink I just need a girl who gon' really understand I just need a girl who gon' really understand I'm good, I'm good, I'm great Know it's been a while, now I'm mixin' up the drank I just need a girl who gon' really understand I just need a girl who gon' really understand And I seen her get rich hittin' the pole I've seen her, I knew she had to know I've seen her take down that tequila Down by the liter, I knew I had to meet her Ooh, she mine, ooh, girl, bump and grind Ooh, she mine, ooh, girl, bump a line Angelina, lips like Angelina Like Angelina (ass shaped like, let's go) Got up, thank the Lord for the day Woke up by a girl, I don't even know her name Woke up by a girl, I don't even know her name I say Got up, thank the Lord for the day Woke up by a girl, I don't even know her name Woke up by a girl, I don't even know her name Paranoid Paranoid Paranoid But I see something in you Paranoid Paranoid Paranoid But I see something in you Paranoid, baby Paranoid, darling Paranoid, baby But I see something in you, girl Paranoid Paranoid I said paranoid, baby But I see something in you Los Angeles! ♪ Oh, oh, oh, oh! Woke up by a girl, I don't even know her name ",
-                        ],
-                        emotion: ["grief"],
-                        intensity: ["high"],
-                        id: "3ed2bd84-acfb-4ded-bfc2-21d77615312c",
-                        _version_: 1795847323371175936,
-                    },
-                    {
-                        track: ["After Hours - Live"],
-                        album: ["Live At SoFi Stadium"],
-                        track_id: ["7HK0ZDEsW0lGKKIVYvni2z"],
-                        lyrics: [
-                            "Ooh, baby I'm fallin' in too deep, oh, no I'm fallin' in too deep, oh, baby I'm fallin' in too deep, oh, so ♪ My darkest hours Girl, I felt so alone inside of this crowded room Different girls on the floor, distractin' my thoughts of you I turned into the man I used to be, to be Put myself to sleep Just so I can get closer to you inside my dreams Didn't wanna wake up 'less you were beside me I just wanted to call you and say, and say Oh, baby Where are you now when I need you most? I'd give it all just to hold you close Sorry that I broke your heart, your heart Never comin' down I was running away from facin' reality Wastin' all of my time out living my fantasies Spendin' money to compensate, compensate 'Cause I want you, baby I be livin' in heaven when I'm inside of you It was simply a blessing wakin' beside you I'll never let you down again, again Oh, baby Where are you now when I need you most? I'd give it all just to hold you close Sorry that I broke your heart, your heart I said, baby I'll treat you better than I did before I'll hold you down and not let you go This time, I won't break your heart, your heart, yeah ♪ I know it's all my fault Made you put down your guard And I know I made you fall Then said you were wrong for me But I lied to you, I lied to you, I lied to you Can't hide the truth, I'd stay with her in spite of you You did some things that you regret, still ride for you 'Cause this house is not a home Without my (baby) (Where are you now when I need you most?) (I gave it all just to hold you close) (Sorry that I broke your heart, your heart) (I said, baby) (I'll treat you better than I did before) (I'll hold you down and not let you go) (This time, I won't break your heart, your heart) No ",
-                        ],
-                        emotion: ["grief"],
-                        intensity: ["high"],
-                        id: "c081d9a7-b6e5-43ee-981f-1d9101c8ae83",
-                        _version_: 1795847323375370240,
-                    },
-                    {
-                        track: ["Out of Time - Live"],
-                        album: ["Live At SoFi Stadium"],
-                        track_id: ["6XZ8C5etRn0kiS1wwuW0SO"],
-                        lyrics: [
-                            "Los Angeles, how the fuck y'all feelin' tonight Look how beautiful you look Look how gorgeous you look tonight And you sound beautiful too, 'cause I just heard you a few seconds ago So, I need you to help me out on this next song, you hear me? Let's go The last few months, I've been workin' on me, baby There's so much trauma in my life I've been so cold to the ones who loved me, baby I look back now and I realize And I remember when I held you You begged me with your drowning eyes to stay And I regret I didn't tell you Now, I can't keep you from loving him You made up your mind Say I love you, girl, but I'm out of time Say I'm there for you, but I'm out of time Say that I'll care for you, but I'm out of time Said I'm too late to make you mine, out of time If he mess up just a little Baby, you know my line If you don't trust him a little Then come right back, girl, come right back Give me one chance, just a little Baby, I'll treat you right And I'll love you like I shoulda loved you all the time And I remember when I held you You begged me with your drowning eyes to stay And I regret I didn't tell you Now, I can't keep you from loving him You made up your mind Say I love you, girl, but I'm out of time Say I'm there for you, but I'm out of time Say that I'll care for you, but I'm out of time Said I'm too late to make you mine, out of time Oh, singin' (out of time) Oh, Los Angeles, oh you look so beautiful tonight, look at you (out of time) Oh, say baby, oh (out of time) Too late to make you mine, out of time (Out of time) (Out of time) Oh, baby, oh, no, no, no ",
-                        ],
-                        emotion: ["love"],
-                        intensity: ["medium"],
-                        id: "12a492b1-6b34-4dc2-a632-61ce1fbc44de",
-                        _version_: 1795847323378515968,
-                    },
-                    {
-                        track: ["Less Than Zero - Live"],
-                        album: ["Live At SoFi Stadium"],
-                        track_id: ["0ijIG2j6oRSMDk5Zp91xXt"],
-                        lyrics: [
-                            "Are you there? Let's g— Remember I was your hero, yeah, yeah, yeah, yeah, yeah I'd wear your heart like a symbol I couldn't save you from my darkest truth of all Yeah, yeah, yeah, yeah, I know I'll always be less than zero Oh, yeah You tried your best with me, I know I couldn't face you with my darkest truth of all You know, you know, you know One, two, one, two, three, let's go (I can't get it) Out of my head No, I can't shake this feeling that crawls in my bed I try to hide it, but I know you know me I try to fight it, but I'd rather be free Oh-oh Oh, yeah Can we meet in the middle? (Oh, oh no) 'Cause you were just like me before Now you'd rather leave me than to watch me die in your arms, oh You ready, you ready, you ready One, two, one, two, three, let's go (I can't get it) Out of my head No, I can't shake this feeling that crawls in my bed I try to hide it, but I know you know me I try to fight it, but I'd rather be free LA make some motherfucking noise! ♪ I can't get it out of my head No, I can't shake this feeling that crawls in my bed I try to hide it, but I know you know me I try to fight it, but I'd rather be free Oh, oh, oh baby I said, one, two, three, sing I can't get it out of my (head) No, I can't shake this feeling that crawls in my bed I try to hide it, but I know you know me I try to fight it, but I'd rather be free Oh, yeah I'll always be less than zero Yeah You tried your best with me, I know ",
-                        ],
-                        emotion: ["apprehension"],
-                        intensity: ["low"],
-                        id: "140e7fd9-1a63-4c09-84d1-a8b5c887490c",
-                        _version_: 1795847323380613120,
-                    },
-                    {
-                        track: ["How Do I Make You Love Me? - Sebastian Ingrosso & Salvatore Ganacci Remix"],
-                        album: ["Dawn FM (Alternate World)"],
-                        track_id: ["2urqWNGpjl07PLAafoa5nT"],
-                        lyrics: [
-                            "I can see the real you, girl You don't have to hide Forget 'bout what your daddy said I'll teach you how to shine And I can see the real you, girl You don't have to hide Forget 'bout what your daddy said I'll teach you how to shine And I'll teach you how to shine And I'll teach you how to shine And I'll teach you how to shine And I'll teach you how to shine And I'll teach you how to shine And I'll teach you how to shine Forget 'bout what your daddy said I'll teach you how to shine ♪ How do I make you love me? I'll teach you how to shine And I'll teach you how to shine And I'll teach you how to shine And I'll teach you how to shine And I'll teach you how to shine And I'll teach you how to shine How do I make you love me? I'll teach you how to shine And I'll teach you how to shine And I'll teach you how to shine And I'll teach you how to shine And I'll teach you how to shine And I'll teach you how to shine Forget 'bout what your daddy said I'll teach you how to shine And I can see the real you, girl You don't have to hide Forget 'bout what your daddy said I'll teach you how to shine And I can see the real you, girl You don't have to hide Forget 'bout what your daddy said I'll teach you how to shine And I can see the real you, girl You don't have to hide Forget 'bout what your daddy said I'll teach you how to shine And I can see the real you, girl You don't have to hide Forget 'bout what your daddy said I'll teach you how to shine And I can see the real you, girl You don't have to hide Forget 'bout what your daddy said I'll teach you how to shine And I can see the real you, girl You don't have to hide Forget 'bout what your daddy said I'll teach you how to shine ♪ How do I make you love me? I'll teach you how to shine And I'll teach you how to shine And I'll teach you how to shine And I'll teach you how to shine And I'll teach you how to shine And I'll teach you how to shine And how do I make you love me? I'll teach you how to shine And I'll teach you how to shine And I'll teach you how to shine And I'll teach you how to shine And I'll teach you how to shine And I'll teach- How do I make you love me? ",
-                        ],
-                        emotion: ["joy"],
-                        intensity: ["medium"],
-                        id: "617f1404-bc2e-4af7-b0a1-e755ba1b60ea",
-                        _version_: 1795847323383758848,
-                    },
-                    {
-                        track: ["Try Me"],
-                        album: ["My Dear Melancholy,"],
-                        track_id: ["4ppTAJUbNXELZcoUaL90wo"],
-                        lyrics: [
-                            "Any time is the time Any time for you to get my call, baby (So, baby) Are you alone, baby? If he ain't around, pick up your phone, baby Whoa Can you try me? Try me? Once you put your pride aside You can notify me, -fy me You're the best I ever had Baby girl, remind me, -mind me Let me know if it's on And you know where to find me, find me Having thoughts you never had, yeah I didn't know you were down for him finding out I thought you had some kind of love for your man Well, I'm not tryna break up something You've been workin' out, you've been steady But I'm ready to go all the way if you let me, don't you tempt me You're lookin' good since the last time I looked at you It might have been, been about a couple months But I just got the picture that you texted to me You ain't steady, you look ready to go all the way If you let me take you down on me Can you try me? Try me? (Oh) Once you put your pride aside You can notify me, -fy me (Hey) You're the best I ever had Baby girl, remind me, -mind me Let me know if it's on And you know where to find me, find me (Hey) Having thoughts you never had, yeah Can you try me? Try me? (Hey) Once you put your pride aside You can notify me, -fy me You're the best I ever had Baby girl, remind me, -mind me (Hey) Let me know if it's on (Let me know) And you know where to find me find me (Hey) Having thoughts you never had, yeah ♪ Better try me Don't you mess with me Don't you mess with me The way I kissed your scars The way I fixed your heart, oh Don't you miss me, babe? Don't you miss me, babe? ",
-                        ],
-                        emotion: ["love"],
-                        intensity: ["medium"],
-                        id: "8319b157-73ab-4d28-ab18-ed3efaa465ad",
-                        _version_: 1795847323386904576,
-                    },
                 ],
+                searchTime: "Search Time: 0.000s",
             };
         },
         components: {
@@ -384,6 +296,7 @@
             DateSelector,
             DurationSelector,
             IntensitySelector,
+            Loading,
         },
         async mounted() {
             await this.updateResults();
@@ -412,6 +325,8 @@
                 this.search.push({ type: "intensity", start: "HAS", data: [], end: "AND" });
             },
             async searchFor() {
+                this.isLoading = true;
+                let startTime = new Date();
                 let searchQuery = JSON.parse(JSON.stringify(this.search));
                 for (let elem of searchQuery) {
                     // remove first element of elem.data
@@ -422,7 +337,7 @@
                 searchQuery.push({ type: "explicit", data: document.getElementById("explicit").value });
                 // send the search data to the backend
                 try {
-                    let response = await fetch("https://lyricalysis-v6esf4zmfa-as.a.run.app/search", {
+                    let response = await fetch("http://localhost:5000/send_search", {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json",
@@ -430,8 +345,14 @@
                         body: JSON.stringify(searchQuery), // Send the JSON data directly
                     });
                     let data = await response.json();
+                    this.results = data["docs"];
+                    let endTime = new Date();
+                    this.searchTime = `Search Time: ${(endTime - startTime) / 1000}s`;
+                    await this.updateResults();
+                    this.isLoading = false;
                 } catch (error) {
                     console.error(error);
+                    this.isLoading = false;
                 }
             },
             removeLatest() {
@@ -442,7 +363,7 @@
             },
             async getTrackDetails(track_id) {
                 try {
-                    let response = await fetch(`https://lyricalysis-v6esf4zmfa-as.a.run.app/get_details/${track_id}`, {
+                    let response = await fetch(`http://localhost:5000/get_details/${track_id}`, {
                         method: "GET",
                         headers: {
                             "Content-Type": "application/json",
@@ -455,15 +376,21 @@
                 }
             },
             async updateResults() {
-                for (let i = 0; i < this.results.length; i++) {
-                    let data = await this.getTrackDetails(this.results[i].track_id);
-                    this.results[i].url = data.url;
-                    this.results[i].name = data.name;
-                    this.results[i].preview = data.preview_url;
-                    this.results[i].image = data.image;
-                    this.results[i].album = this.results[i].album[0];
-                    this.results[i].lyrics = this.results[i].lyrics[0];
+                this.isLoading = true;
+                try {
+                    for (let i = 0; i < this.results.length; i++) {
+                        let data = await this.getTrackDetails(this.results[i].track_id);
+                        this.results[i].url = data.url;
+                        this.results[i].name = data.name;
+                        this.results[i].preview = data.preview_url;
+                        this.results[i].image = data.image;
+                        this.results[i].album = this.results[i].album[0];
+                        this.results[i].lyrics = this.results[i].lyrics[0];
+                    }
+                } catch (error) {
+                    console.error(error);
                 }
+                this.isLoading = false;
             },
         },
         computed: {
