@@ -1,0 +1,7 @@
+Flask[async]
+flask-login
+flask-cors
+pandas
+spotify-token
+httpx
+syrics

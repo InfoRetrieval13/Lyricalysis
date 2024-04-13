@@ -1,15 +1,24 @@
 <template>
     <div class="w-[24vw] flex-wrap flex flex-col gap-2 items-center shadow-sm rounded-sm py-2">
         <div class="data flex flex-row gap-2 max-w-max flex-wrap items-start justify-start p-2">
-            <div
-                v-for="(info, index) in data"
-                :class="applyClass(index)"
-                class="px-4">
-                {{ info }}
+            <div v-for="(info, index) in data">
+                <div
+                    v-if="index != 0"
+                    :class="applyClass(index)">
+                    {{ info }}
+                </div>
             </div>
         </div>
 
-        <div class="drop w-[15vw] flex items-start justify-between gap-2">
+        <div class="drop w-[20vw] flex items-start justify-center gap-2">
+            <select v-model="durationBoolOperator">
+                <option
+                    v-for="operator in boolOperators"
+                    :key="operator"
+                    :value="operator">
+                    {{ operator }}
+                </option>
+            </select>
             <select v-model="durationOperator">
                 <option
                     v-for="operator in operators"
@@ -19,29 +28,22 @@
                 </option>
             </select>
 
-            <input
-                v-model="duration"
-                type="number"
-                min="1"
-                class="w-20 h-10 bg-green-500 text-white" />
-
-            <select v-model="durationUnit">
+            <select v-model="duration">
                 <option
-                    v-for="unit in units"
-                    :key="unit"
-                    :value="unit">
-                    {{ unit }}
+                    value=""
+                    disabled
+                    selected>
+                    Duration
+                </option>
+                <option
+                    v-for="i in durationOptions"
+                    :key="i"
+                    :value="i">
+                    {{ i }}
                 </option>
             </select>
 
-            <select v-model="durationBoolOperator">
-                <option
-                    v-for="operator in boolOperators"
-                    :key="operator"
-                    :value="operator">
-                    {{ operator }}
-                </option>
-            </select>
+            <div class="w-15 h-10 bg-green-500 text-white rounded-md flex items-center justify-center px-2">Seconds</div>
         </div>
 
         <div class="flex w-[10vw] items-start justify-between gap-2">
@@ -57,33 +59,32 @@
         props: { data: Array },
         data() {
             return {
-                operators: ["Shorter than", "Longer than"],
-                units: ["seconds", "minutes"],
+                operators: ["Shorter Than / Equals", "Longer Than / Equals"],
                 boolOperators: ["AND", "OR"],
-                duration: null,
-                durationUnit: "",
-                durationOperator: "",
-                durationBoolOperator: "",
+                duration: "",
+                durationOptions: [15, 30, 45, 60, 90, 120, 150, 180, 210, 240, 270, 300, 360, 420, 480, 540, 600],
+                durationOperator: "Shorter Than / Equals",
+                durationBoolOperator: "AND",
             };
         },
         methods: {
             updateElement() {
-                if (!this.duration || !this.durationUnit || !this.durationOperator || !this.durationBoolOperator) {
+                if (!this.duration || !this.durationOperator || !this.durationBoolOperator) {
                     return;
                 }
-                this.data.push(`${this.durationOperator} ${this.duration} ${this.durationUnit}`);
                 this.data.push(this.durationBoolOperator);
+                this.data.push(`${this.durationOperator} ${this.duration} seconds`);
             },
             removeElement() {
                 this.data.pop();
                 this.data.pop();
             },
             applyClass(index) {
-                let styles = ["border-2"];
-                if (index % 2 == 0) {
-                    styles.push("border-green-500", "bg-green-100");
+                let styles = ["border-2", "px-4", "text-violet", "font-semibold", "font-inter"];
+                if (index % 2 == 1) {
+                    styles.push("border-greeny", "bg-green-100");
                 } else {
-                    styles.push("border-blue-500", "bg-blue-100");
+                    styles.push("border-bluey", "bg-blue-100");
                 }
                 return styles;
             },
