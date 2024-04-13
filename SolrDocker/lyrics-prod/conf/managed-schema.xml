@@ -452,7 +452,7 @@
   <field name="_text_" type="text_general" multiValued="true" indexed="true" stored="false"/>
   <field name="_version_" type="plong" indexed="false" stored="false"/>
   <field name="album" type="text_general"/>
-  <field name="artist" type="text_general"/>
+  <field name="artists" type="text_general"/>
   <field name="duration" type="text_general"/>
   <field name="emotion" type="text_general"/>
   <field name="explicit" type="booleans"/>
@@ -535,7 +535,7 @@
   <copyField source="duration" dest="duration_str" maxChars="256"/>
   <copyField source="intensity" dest="intensity_str" maxChars="256"/>
   <copyField source="emotion" dest="emotion_str" maxChars="256"/>
-  <copyField source="artist" dest="artist_str" maxChars="256"/>
+  <copyField source="artists" dest="artists_str" maxChars="256"/>
   <copyField source="album" dest="album_str" maxChars="256"/>
   <copyField source="track_id" dest="track_id_str" maxChars="256"/>
   <copyField source="genre" dest="genre_str" maxChars="256"/>
