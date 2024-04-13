@@ -1,4 +1,6 @@
 from flask import Flask, request
+import json
+from util import translator
 from flask_login import LoginManager
 from flask_cors import CORS
 import pandas as pd
@@ -80,6 +82,38 @@ async def get_details(track_id):
     image = data["album"]["images"][0]["url"]
     print(url, name, preview_url, image)
     return {"url": url, "name": name, "preview_url": preview_url, "image": image}
+
+@app.route('/send_search', methods=['POST'])
+def query_parser():
+    query = request.get_json()
+
+    full_query = ''
+
+    #iterate through the json object
+    for i in range(0, len(query)):
+        condition = query[i]
+
+        field = condition['type']
+        if 'start' in condition: negation = condition['start']
+        else: negation = None
+
+        data = condition['data']
+
+        if 'end' in condition: connector = condition['end']
+        else: connector = None
+
+        field_query = [negation, field, data, connector]
+        string_field_query = translator(field_query)
+
+        full_query += string_field_query
+        
+    endpoint = f"http://localhost:8983/solr/lyrics-dev/select?q={full_query}"
+
+    response = httpx.get(endpoint)
+    data = response.json()
+    docs = json.dumps(data['response']['docs'])
+
+    return {'docs': docs}
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True)
