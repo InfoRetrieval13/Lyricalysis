@@ -165,7 +165,7 @@
                 <button @click="searchFor">Search</button>
             </div>
         </div>
-        <div class="bg-dredy shadow-lg rounded-md result-section w-[95vw] flex flex-col items-center justify-center gap-2 p-2 relative">
+        <div class="bg-dredy shadow-lg rounded-md result-section w-[95vw] flex flex-col items-center justify-center gap-2 p-2 relative min-h-36">
             <div class="absolute -top-7 right-2 text-whitey">
                 {{ searchTime }}
             </div>
@@ -178,8 +178,12 @@
                         :src="result.image"
                         alt="" />
                     <div>
-                        <h1 class="text-xl font-bold text-whitey">{{ result.name }}</h1>
-                        <h2 class="text-lg text-violet">{{ result.album }}</h2>
+                        <h1 class="text-2xl font-bold text-whitey">{{ result.name }}</h1>
+                        <div class="text-xl font-inter font-semibold text-violet">
+                            <span v-for="artist in result.artists">{{ artist }}</span>
+                        </div>
+                        <div class="text-sm">Released: {{ result.release_date[0].substring(0, 10) }}</div>
+                        <div class="text-sm">Duration: {{ Math.floor(result.duration[0] / 60) }} minutes {{ result.duration[0] % 60 }} seconds</div>
                     </div>
                 </div>
                 <div class="w-[50vw] h-36 flex overflow-auto p-2 shadow-2xl lyrics rounded-md">
