@@ -26,7 +26,8 @@ def date_conversion(month, year):
 def translator(field_query):
 
 	if field_query[1] == 'artists' or field_query[1] == 'genres' or field_query[1] == 'emotions':
-		field = field_query[1][:-1]
+		if field_query[1] == 'artists': field = field_query[1]
+		else: field = field_query[1][:-1]
 		string = ''
 		for data in field_query[2]:
 			if data == 'OR' or data == 'AND':
