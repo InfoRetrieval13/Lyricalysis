@@ -107,7 +107,7 @@ def query_parser():
 
         full_query += string_field_query
         
-    endpoint = f"http://localhost:8983/solr/lyrics-dev/select?q={full_query}"
+    endpoint = f"http://localhost:8983/solr/lyrics-prod/select?q={full_query}"
 
     response = httpx.get(endpoint)
     data = response.json()
