@@ -1,27 +1,27 @@
-version: "3.8" # Or a suitable version for your setup
+version: "3.8"
 
 services:
     lyricalysisui-frontend:
         build:
-            context: /LyricalysisUI
+            context: ./LyricalysisUI
             dockerfile: Dockerfile
         ports:
-            - "5000:5000" # Replace 3000 with your frontend's port
+            - "80:80"
         depends_on:
             - lyricalysisui-backend
 
     lyricalysisui-backend:
         build:
-            context: /LyricalysisUI/Backend
+            context: ./LyricalysisUI/Backend
             dockerfile: Dockerfile
         ports:
-            - "5173:5173" # Replace 5000 with your backend's port
+            - "5000:5000"
         depends_on:
             - solr
 
     solr:
         build:
-            context: /SolrDocker/lyrics-prod
+            context: ./SolrDocker/lyrics-prod
             dockerfile: Dockerfile
         ports:
-            - "8983:8983" # Expose Solr's standard port
+            - "8983:8983"
