@@ -4,10 +4,9 @@ FROM node:lts-alpine AS build-stage
 WORKDIR /app
 
 COPY package*.json ./
-RUN npm install
-
 COPY . .
-
+RUN npm install --only=production
+RUN npm install --only=development
 RUN npm run build 
 
 # Production stage
