@@ -33,7 +33,7 @@ def translator(field_query):
 				string = string + data
 
 			else:
-				string = string + field + ':' + data
+				string = string + field + ':' +  '\"' + data + '\"'
 
 			string = string + ' '
 	
