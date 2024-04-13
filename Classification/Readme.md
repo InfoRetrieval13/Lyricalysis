@@ -1,4 +1,23 @@
-Emotion Classification:
+# Emotion Recognition
+
+This folder contains the labeled datasets and code to train the classification models 
+**NOTE: the code was run using Google Colab T4 GPU and the models are hosted in Huggingface Hub. To run and save the model, changes to the code are required as the models are hosted using a personal huggingface account**
+- **CZ4034_Classification.ipynb:**
+  The main notebook used to train the DistilBERT model<br><br/>
+- **Hyperparameter_Tuning.ipynb:**
+  The notebook used to tune hyperparameters (learning rate, weight decay, batch size) with 5-fold cross validation<br><br/>
+- **Stacked_Ensemble.ipynb:**
+  The notebook used to train and ensemble 3 models (GPT-2, BERT and DistilBERT)<br><br/>
+- **Stratified_Sampling.ipynb:**
+  The notebook used to pick a small subset of lyrics from the unlabelled crawled dataset as proportionally represented by genre and emotions<br><br/>
+- **eval_labeled_lyrics.csv:**
+  1102 rows of manually labelled data for evaluation<br><br/>
+- **train_labeled_lyrics.csv:**
+  1117 rows of manually labelled data for training<br><br/>
+- **final_labeled_dataset.csv:**
+  20,799 rows of data in total labelled using the fine-tuned DistilBERT model<br><br/>
+
+### EMOTION LABELS
 
     "0": "serenity",
     "1": "joy",
