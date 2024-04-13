@@ -37,6 +37,13 @@ emotions.sort()
 emotions = [emotion.capitalize() for emotion in emotions]
 intensity = list(df['intensity'].unique())
 
+def refresh_token():
+    global access_token
+    global expiration_date
+    data = st.start_session(SP_DC, SP_KEY)
+    access_token = data[0]
+    expiration_date = data[1]
+
 CORS(app)
 
 @app.route('/', methods=['GET'])
@@ -69,6 +76,7 @@ def search():
 
 @app.route('/get_details/<track_id>', methods=['GET'])
 async def get_details(track_id):
+    refresh_token()
     endpoint = f"https://api.spotify.com/v1/tracks/{track_id}"
     headers = {
         "Authorization": f"Bearer {access_token}"
@@ -80,7 +88,7 @@ async def get_details(track_id):
     name = data["name"]
     preview_url = data["preview_url"]
     image = data["album"]["images"][0]["url"]
-    print(url, name, preview_url, image)
+    # print(url, name, preview_url, image)
     return {"url": url, "name": name, "preview_url": preview_url, "image": image}
 
 @app.route('/send_search', methods=['POST'])
@@ -107,12 +115,10 @@ def query_parser():
 
         full_query += string_field_query
         
-    endpoint = f"http://localhost:8983/solr/lyrics-prod/select?q={full_query}"
-
+    endpoint = f"http://localhost:8983/solr/mycore/select?q={full_query}"
     response = httpx.get(endpoint)
     data = response.json()
-    docs = json.dumps(data['response']['docs'])
-
+    docs = data['response']['docs']
     return {'docs': docs}
 
 if __name__ == '__main__':
