@@ -4,6 +4,7 @@ from util import translator
 from flask_login import LoginManager
 from flask_cors import CORS
 import pandas as pd
+import httpx
 
 app = Flask(__name__)
 login_manager = LoginManager(app)
