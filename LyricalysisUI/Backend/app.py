@@ -86,8 +86,31 @@ def query_parser():
     # endpoint = f"http://localhost:8983/solr/mycore/select?q={full_query}"
     endpoint = f"http://solr:8983/solr/mycore/select?q={full_query}"
     response = httpx.get(endpoint)
-    data = response.json()
-    docs = data['response']['docs']
+    try:
+        data = response.json()
+        docs = data['response']['docs']
+    except:
+        return {"docs": [{
+                        "album": ["No Results Found"],
+                        "track": ["No Results Found"],
+                        "track_id": ["7zD97mcPo9fng0aJqUhFvd"],
+                        "lyrics": [
+                            "No Results Found"
+                        ],
+                        "duration": [0],
+                        "genre": ["NIL"],
+                        "release_date": ["2024-01-01T00:00:00Z"],
+                        "explicit": [False],
+                        "artists": ["NIL"],
+                        "url": ["https://open.spotify.com/track/7zD97mcPo9fng0aJqUhFvd"],
+                        "name": ["NIL"],
+                        "preview_url": ["https://p.scdn.co/mp3-preview/549be7417c775d68366fe86a52f2362d1d35f06f?cid=162b7dc01f3a4a2ca32ed3cec83d1e02"],
+                        "image": ["https://as1.ftcdn.net/v2/jpg/05/57/94/52/1000_F_557945208_ee1VFo8QxNFOJzZEjbR1gq52lOr1bUwZ.jpg"],
+                        "emotion": ["ecstasy"],
+                        "intensity": ["3"],
+                        "id": "9d298669-e6f6-452a-b324-22d6fc481930",
+                        "_version_": 1796230700896092163,
+                    }]}
     return {'docs': docs}
 
 if __name__ == '__main__':
