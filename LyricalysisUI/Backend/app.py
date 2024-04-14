@@ -84,7 +84,7 @@ def query_parser():
         
     print("querying:", full_query)
     # endpoint = f"http://localhost:8983/solr/mycore/select?q={full_query}"
-    endpoint = f"http://solr:8983/solr/mycore/select?q={full_query}"
+    endpoint = f"https://lyricalysis-solr-v6esf4zmfa-as.a.run.app/solr/mycore/select?q={full_query}"
     response = httpx.get(endpoint)
     data = response.json()
     docs = data['response']['docs']
