@@ -183,7 +183,7 @@
                             <span v-for="artist in result.artists">{{ artist }}</span>
                         </div>
                         <div class="text-sm">Released: {{ result.release_date[0].substring(0, 10) }}</div>
-                        <div class="text-sm">Duration: {{ Math.floor(result.duration[0] / 60) }} minutes {{ result.duration[0] % 60 }} seconds</div>
+                        <div class="text-sm">Duration: {{ Math.floor(result.duration / 60) }} minutes {{ result.duration % 60 }} seconds</div>
                     </div>
                 </div>
                 <div class="w-[50vw] h-36 flex overflow-auto p-2 shadow-2xl lyrics rounded-md">

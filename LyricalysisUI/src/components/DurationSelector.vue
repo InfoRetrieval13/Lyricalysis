@@ -43,7 +43,7 @@
                 </option>
             </select>
 
-            <div class="w-15 h-10 bg-green-500 text-white rounded-md flex items-center justify-center px-2">Seconds</div>
+            <div class="w-15 h-10 bg-greeny text-white rounded-md flex items-center justify-center px-2">Seconds</div>
         </div>
 
         <div class="flex w-[10vw] items-start justify-between gap-2">
