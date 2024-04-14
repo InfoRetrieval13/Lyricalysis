@@ -236,7 +236,7 @@
                         style="border-radius: 12px"
                         :src="spotifyEmbedUrl(result.track_id)"
                         width="100%"
-                        height="152"
+                        height="90%"
                         frameBorder="0"
                         allowfullscreen=""></iframe>
                 </div>
