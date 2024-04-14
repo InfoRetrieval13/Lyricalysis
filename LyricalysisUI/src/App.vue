@@ -485,7 +485,7 @@
                 searchQuery.push({ type: "explicit", data: document.getElementById("explicit").value });
                 // send the search data to the backend
                 try {
-                    let response = await fetch("http://localhost:5000/send_search", {
+                    let response = await fetch("https://lyricalysis-v6esf4zmfa-as.a.run.app/send_search", {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json",
@@ -511,7 +511,7 @@
             },
             async getTrackDetails(track_id) {
                 try {
-                    let response = await fetch(`http://localhost:5000/get_details/${track_id}`, {
+                    let response = await fetch(`https://lyricalysis-v6esf4zmfa-as.a.run.app/get_details/${track_id}`, {
                         method: "GET",
                         headers: {
                             "Content-Type": "application/json",
