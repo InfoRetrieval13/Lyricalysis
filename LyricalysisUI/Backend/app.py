@@ -86,6 +86,8 @@ def query_parser():
     # endpoint = f"http://localhost:8983/solr/mycore/select?q={full_query}"
     endpoint = f"http://solr:8983/solr/mycore/select?q={full_query}"
     response = httpx.get(endpoint)
+    data = response.json()
+    docs = data['response']['docs']
     try:
         data = response.json()
         docs = data['response']['docs']
